@@ -1,0 +1,73 @@
+.login_form_background {
+    width: 636px;
+    height: 481px;
+
+    background: rgba(233, 244, 249, 0.7);
+    border: 10px solid rgba(170, 198, 210, 0.7);
+    border-radius: 20px;
+}
+
+.font32 {
+    width: 100px;
+    height: 60px;
+
+    font-family: 'Inder';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+
+    color: #247AA0;
+}
+
+.titleText {
+    /* Dietary Assistant */
+    width: 636px;
+    height: 100px;
+
+    font-family: 'Inder';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 64px;
+
+    color: #247AA0;
+}
+
+.background {
+    background: url(../images/0000.jpg);
+    /* 調整背景圖片的屬性 */
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.mar_0 {
+    margin: 0px;
+}
+
+.bor_0 {
+    border: 0px;
+}
+
+.pad_0 {
+    padding: 0px;
+}
+
+.mar_bor_0 {
+    margin: 0px;
+    border: 0px;
+}
+
+.bor_pad_0 {
+    border: 0px;
+    padding: 0px;
+}
+
+.mar_pad_0 {
+    margin: 0px;
+    padding: 0px;
+}
+
+.mar_bor_pad_0 {
+    margin: 0px;
+    border: 0px;
+    padding: 0px;
+}
