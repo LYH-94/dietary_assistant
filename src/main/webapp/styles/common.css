@@ -1,25 +1,4 @@
-.login_form_background {
-    width: 636px;
-    height: 481px;
-
-    background: rgba(233, 244, 249, 0.7);
-    border: 10px solid rgba(170, 198, 210, 0.7);
-    border-radius: 20px;
-}
-
-.font32 {
-    width: 100px;
-    height: 60px;
-
-    font-family: 'Inder';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 32px;
-
-    color: #247AA0;
-}
-
-.titleText {
+.title_text {
     /* Dietary Assistant */
     width: 636px;
     height: 100px;
