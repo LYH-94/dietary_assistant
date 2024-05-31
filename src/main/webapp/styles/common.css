@@ -18,6 +18,30 @@
     background-repeat: no-repeat;
 }
 
+.navbar_inner {
+    width: 1440px;
+    height: 45px;
+    background: #247AA0;
+}
+
+.navbar_btn {
+    width: 196px;
+    height: 45px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 29px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    background: #247AA0;
+    color: #FFFFFF;
+}
+
 .mar_0 {
     margin: 0px;
 }
