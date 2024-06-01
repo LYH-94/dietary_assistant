@@ -94,6 +94,42 @@
     color: #247AA0;
 }
 
+.font_306_60_32 {
+    width: 306px;
+    height: 60px;
+
+    font-family: 'Inder';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+
+    color: #FFFFFF;
+}
+
+.font_86_40_20 {
+    width: 86px;
+    height: 40px;
+
+    font-family: 'Inder';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+
+    color: #FFFFFF;
+}
+
+.font_196_40_20 {
+    width: 196px;
+    height: 40px;
+
+    font-family: 'Inder';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+
+    color: #FFFFFF;
+}
+
 .divider {
     width: 1440px;
     height: 0px;
@@ -144,4 +180,19 @@
     background: #FFFFFF;
     border: 2px solid #AAC6D2;
     border-radius: 10px;
+}
+
+.modify_btn {
+    width: 100px;
+    height: 45px;
+
+    background: #66CBE9;
+    border-radius: 10px;
+}
+
+.footer_backgroung {
+width: 1440px;
+height: 210px;
+
+background: #247AA0;
 }
