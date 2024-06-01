@@ -42,6 +42,49 @@
     color: #FFFFFF;
 }
 
+.footer_backgroung {
+    width: 1440px;
+    height: 210px;
+
+    background: #247AA0;
+}
+
+.footer_font_86_40_20 {
+    width: 86px;
+    height: 40px;
+
+    font-family: 'Inder';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+
+    color: #FFFFFF;
+}
+
+.footer_font_196_40_20 {
+    width: 196px;
+    height: 40px;
+
+    font-family: 'Inder';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+
+    color: #FFFFFF;
+}
+
+.footer_font_306_60_32 {
+    width: 306px;
+    height: 60px;
+
+    font-family: 'Inder';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+
+    color: #FFFFFF;
+}
+
 .mar_0 {
     margin: 0px;
 }

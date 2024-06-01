@@ -1,0 +1,43 @@
+.divider {
+    /* 分隔線 */
+    width: 1440px;
+    height: 0px;
+
+    border: 2px solid #BBD2DC;
+}
+
+.font_86_60_24 {
+    width: 86px;
+    height: 60px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+
+    color: #247AA0;
+}
+
+.font_86_45_24 {
+    width: 86px;
+    height: 45px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+
+    color: #247AA0;
+}
+
+.font_196_60_24 {
+    width: 196px;
+    height: 60px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+
+    color: #247AA0;
+}
