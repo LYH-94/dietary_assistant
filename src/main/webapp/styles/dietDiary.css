@@ -6,6 +6,33 @@
     border: 2px solid #BBD2DC;
 }
 
+.datepicker_style {
+    width: 290px;
+    height: 45px;
+
+    background: #247AA0;
+    border-radius: 5px;
+}
+
+.datepicker_input_style {
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-size: 20px;
+    text-align: center;
+
+    background: #247AA0;
+    border-radius: 5px;
+    border: 2px solid #247AA0;
+
+    color: #FFFFFF;
+}
+
+.arrow {
+    width: 25px;
+    height: 20px;
+}
+
 .font_86_60_24 {
     width: 86px;
     height: 60px;
