@@ -57,11 +57,11 @@
                 <!-- 日期選擇器 -->
                 <div class="d-flex align-items-center datepicker_style" style="margin-top: 60px;">
                     <!-- 昨天按鈕 -->
-                    <img src="../images/arrow_yesterday.svg" id="arrow_yesterday_btn" class="arrow" style="margin: 0px 10px 0px 10px;">
+                    <img src="../images/arrow_yesterday.svg" id="arrow_yesterday_btn" class="arrow_btn" style="margin: 0px 10px 0px 10px;">
                     <!-- 創建一個輸入框作為日期選擇器觸發器 -->
                     <input type="text" id="datepicker" class="form-control datepicker_input_style" style="width: 200px;" readonly>
                     <!-- 明天按紐 -->
-                    <img src="../images/arrow_tomorrow.svg" id="arrow_tomorrow_btn" class="arrow" style="margin: 0px 10px 0px 10px;">
+                    <img src="../images/arrow_tomorrow.svg" id="arrow_tomorrow_btn" class="arrow_btn" style="margin: 0px 10px 0px 10px;">
                 </div>
             </div>
             <!-- 分隔線 -->
@@ -70,9 +70,135 @@
             </div>
         </div>
 
-        <!-- row 4 - 用戶資料 -->
-        <div class="row justify-content-center mar_0">
+        <!-- row 4 - 飲食日記 -->
+        <div class="pad_0">
+            <!-- 早餐 -->
+            <div class="row justify-content-center mar_0">
+                <div class="d-flex col-8 pad_0">
+                    <span class="d-flex justify-content-start align-items-center font_580_60_32" style="margin: 30px 0px 0px 0px;">早餐</span>
+                    <span class="d-flex justify-content-center align-items-center value_field_style" style="margin: 30px 0px 0px 6px;">熱量<br>kcal</span>
+                    <span class="d-flex justify-content-center align-items-center value_field_style" style="margin: 30px 0px 0px 6px;">碳水<br>g</span>
+                    <span class="d-flex justify-content-center align-items-center value_field_style" style="margin: 30px 0px 0px 6px;">脂肪<br>g</span>
+                    <span class="d-flex justify-content-center align-items-center value_field_style" style="margin: 30px 0px 0px 6px;">蛋白質<br>g</span>
+                </div>
+                <!-- 添加的食品 -->
+                <div class="d-flex col-8 pad_0 added_diet" style="margin: 10px 0px 0px 0px;">
+                    <span class="d-flex justify-content-start align-items-center font_580_60_24" style="padding: 0px 0px 0px 20px;">蘑菇鐵板麵 , 1 份</span>
+                    <span class="d-flex justify-content-center align-items-center font_86_60_24" style="margin: 0px 0px 0px 6px;">400</span>
+                    <span class="d-flex justify-content-center align-items-center font_86_60_24" style="margin: 0px 0px 0px 6px;">0</span>
+                    <span class="d-flex justify-content-center align-items-center font_86_60_24" style="margin: 0px 0px 0px 6px;">0</span>
+                    <span class="d-flex justify-content-center align-items-center font_86_60_24" style="margin: 0px 0px 0px 6px;">0</span>
+                    <!-- 移除按紐 -->
+                    <img src="../images/remove.svg" class="remove_diet_btn" style="margin: 20px 0px 20px 20px;">
+                </div>
+                <!-- 早餐總計 -->
+                <div class="d-flex col-8 pad_0" style="margin: 10px 0px 0px 0px;">
+                    <span class="d-flex justify-content-start align-items-center font_580_60_24" style="padding: 0px 0px 0px 20px; color: #247AA0">加入食品</span>
+                    <span class="d-flex justify-content-center align-items-center font_86_60_24" style="margin: 0px 0px 0px 6px;">400</span>
+                    <span class="d-flex justify-content-center align-items-center font_86_60_24" style="margin: 0px 0px 0px 6px;">0</span>
+                    <span class="d-flex justify-content-center align-items-center font_86_60_24" style="margin: 0px 0px 0px 6px;">0</span>
+                    <span class="d-flex justify-content-center align-items-center font_86_60_24" style="margin: 0px 0px 0px 6px;">0</span>
+                </div>
+                <!-- 分隔線 -->
+                <div class="d-flex col-8 pad_0">
+                    <div class="divider_2"></div>
+                </div>
+            </div>
 
+            <!-- 午餐 -->
+            <div class="row justify-content-center mar_0">
+                <div class="d-flex col-8 pad_0">
+                    <span class="d-flex justify-content-start align-items-center font_580_60_32" style="margin: 30px 0px 0px 0px;">午餐</span>
+                </div>
+                <!-- 添加的食品 -->
+                <div class="d-flex col-8 pad_0 added_diet" style="margin: 10px 0px 0px 0px;">
+                    <span class="d-flex justify-content-start align-items-center font_580_60_24" style="padding: 0px 0px 0px 20px;">7-11 - 起司貝果 , 1 份</span>
+                    <span class="d-flex justify-content-center align-items-center font_86_60_24" style="margin: 0px 0px 0px 6px;">348</span>
+                    <span class="d-flex justify-content-center align-items-center font_86_60_24" style="margin: 0px 0px 0px 6px;">56</span>
+                    <span class="d-flex justify-content-center align-items-center font_86_60_24" style="margin: 0px 0px 0px 6px;">9</span>
+                    <span class="d-flex justify-content-center align-items-center font_86_60_24" style="margin: 0px 0px 0px 6px;">11</span>
+                    <!-- 移除按紐 -->
+                    <img src="../images/remove.svg" class="remove_diet_btn" style="margin: 20px 0px 20px 20px;">
+                </div>
+
+                <div class="d-flex col-8 pad_0 added_diet" style="margin: 10px 0px 0px 0px;">
+                    <span class="d-flex justify-content-start align-items-center font_580_60_24" style="padding: 0px 0px 0px 20px;">摩斯漢堡 - 冰拿鐵咖啡 , 1 杯</span>
+                    <span class="d-flex justify-content-center align-items-center font_86_60_24" style="margin: 0px 0px 0px 6px;">121</span>
+                    <span class="d-flex justify-content-center align-items-center font_86_60_24" style="margin: 0px 0px 0px 6px;">10</span>
+                    <span class="d-flex justify-content-center align-items-center font_86_60_24" style="margin: 0px 0px 0px 6px;">6</span>
+                    <span class="d-flex justify-content-center align-items-center font_86_60_24" style="margin: 0px 0px 0px 6px;">7</span>
+                    <!-- 移除按紐 -->
+                    <img src="../images/remove.svg" class="remove_diet_btn" style="margin: 20px 0px 20px 20px;">
+                </div>
+                <!-- 午餐總計 -->
+                <div class="d-flex col-8 pad_0" style="margin: 10px 0px 0px 0px;">
+                    <span class="d-flex justify-content-start align-items-center font_580_60_24" style="padding: 0px 0px 0px 20px; color: #247AA0">加入食品</span>
+                    <span class="d-flex justify-content-center align-items-center font_86_60_24" style="margin: 0px 0px 0px 6px;">469</span>
+                    <span class="d-flex justify-content-center align-items-center font_86_60_24" style="margin: 0px 0px 0px 6px;">66</span>
+                    <span class="d-flex justify-content-center align-items-center font_86_60_24" style="margin: 0px 0px 0px 6px;">15</span>
+                    <span class="d-flex justify-content-center align-items-center font_86_60_24" style="margin: 0px 0px 0px 6px;">18</span>
+                </div>
+                <!-- 分隔線 -->
+                <div class="d-flex col-8 pad_0">
+                    <div class="divider_2"></div>
+                </div>
+            </div>
+
+            <!-- 晚餐 -->
+            <div class="row justify-content-center mar_0">
+                <div class="d-flex col-8 pad_0">
+                    <span class="d-flex justify-content-start align-items-center font_580_60_32" style="margin: 30px 0px 0px 0px;">晚餐</span>
+                </div>
+                <!-- 添加的食品 -->
+
+                <!-- 晚餐總計 -->
+                <div class="d-flex col-8 pad_0" style="margin: 10px 0px 0px 0px;">
+                    <span class="d-flex justify-content-start align-items-center font_580_60_24" style="padding: 0px 0px 0px 20px; color: #247AA0;">加入食品</span>
+                    <span class="d-flex justify-content-center align-items-center font_86_60_24" style="margin: 0px 0px 0px 6px;">0</span>
+                    <span class="d-flex justify-content-center align-items-center font_86_60_24" style="margin: 0px 0px 0px 6px;">0</span>
+                    <span class="d-flex justify-content-center align-items-center font_86_60_24" style="margin: 0px 0px 0px 6px;">0</span>
+                    <span class="d-flex justify-content-center align-items-center font_86_60_24" style="margin: 0px 0px 0px 6px;">0</span>
+                </div>
+                <!-- 分隔線 -->
+                <div class="d-flex col-8 pad_0">
+                    <div class="divider_2"></div>
+                </div>
+            </div>
+
+            <!-- 熱量計算 -->
+            <div class="row justify-content-center mar_0">
+                <!-- 今日總計 -->
+                <div class="d-flex col-8 pad_0" style="margin: 10px 0px 0px 0px;">
+                    <span class="d-flex justify-content-end align-items-center font_580_60_24" style="padding: 0px 20px 0px 0px; color: #247AA0;">總計</span>
+                    <span class="d-flex justify-content-center align-items-center font_86_60_24" style="margin: 0px 0px 0px 6px;">869</span>
+                    <span class="d-flex justify-content-center align-items-center font_86_60_24" style="margin: 0px 0px 0px 6px;">66</span>
+                    <span class="d-flex justify-content-center align-items-center font_86_60_24" style="margin: 0px 0px 0px 6px;">15</span>
+                    <span class="d-flex justify-content-center align-items-center font_86_60_24" style="margin: 0px 0px 0px 6px;">18</span>
+                </div>
+                <!-- 熱量目標 -->
+                <div class="d-flex col-8 pad_0" style="margin: 10px 0px 0px 0px;">
+                    <span class="d-flex justify-content-end align-items-center font_580_60_24" style="padding: 0px 20px 0px 0px; color: #247AA0;">目標</span>
+                    <span class="d-flex justify-content-center align-items-center font_86_60_24" style="margin: 0px 0px 0px 6px;">1800</span>
+                    <span class="d-flex justify-content-center align-items-center font_86_60_24" style="margin: 0px 0px 0px 6px;">25</span>
+                    <span class="d-flex justify-content-center align-items-center font_86_60_24" style="margin: 0px 0px 0px 6px;">60</span>
+                    <span class="d-flex justify-content-center align-items-center font_86_60_24" style="margin: 0px 0px 0px 6px;">90</span>
+                </div>
+                <!-- 剩餘熱量 -->
+                <div class="d-flex col-8 pad_0" style="margin: 10px 0px 0px 0px;">
+                    <span class="d-flex justify-content-end align-items-center font_580_60_24" style="padding: 0px 20px 0px 0px; color: #2F80FB;">剩餘</span>
+                    <span class="d-flex justify-content-center align-items-center font_86_60_24" style="margin: 0px 0px 0px 6px; color: #2F80FB;">931</span>
+                    <span class="d-flex justify-content-center align-items-center font_86_60_24" style="margin: 0px 0px 0px 6px; color: #2F80FB;">159</span>
+                    <span class="d-flex justify-content-center align-items-center font_86_60_24" style="margin: 0px 0px 0px 6px; color: #2F80FB;">45</span>
+                    <span class="d-flex justify-content-center align-items-center font_86_60_24" style="margin: 0px 0px 0px 6px; color: #2F80FB;">72</span>
+                </div>
+                <div class="d-flex col-8 pad_0">
+                    <span class="d-flex justify-content-start align-items-center font_580_60_32" style="margin: 0px 0px 0px 0px;"></span>
+                    <span class="d-flex justify-content-center align-items-center value_field_style" style="margin: 0px 0px 0px 6px;">熱量<br>kcal</span>
+                    <span class="d-flex justify-content-center align-items-center value_field_style" style="margin: 0px 0px 0px 6px;">碳水<br>g</span>
+                    <span class="d-flex justify-content-center align-items-center value_field_style" style="margin: 0px 0px 0px 6px;">脂肪<br>g</span>
+                    <span class="d-flex justify-content-center align-items-center value_field_style" style="margin: 0px 0px 0px 6px;">蛋白質<br>g</span>
+                </div>
+            </div>
         </div>
 
         <!-- footer -->

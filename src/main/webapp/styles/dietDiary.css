@@ -6,6 +6,14 @@
     border: 2px solid #BBD2DC;
 }
 
+.divider_2 {
+    /* 分隔線 */
+    width: 100%;
+    height: 0px;
+
+    border: 1px solid #BBD2DC;
+}
+
 .datepicker_style {
     width: 290px;
     height: 45px;
@@ -28,8 +36,45 @@
     color: #FFFFFF;
 }
 
-.arrow {
+.arrow_btn {
     width: 25px;
+    height: 20px;
+}
+
+.value_field_style {
+    width: 86px;
+    height: 60px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    text-align: center;
+
+    background: #247AA0;
+    border-radius: 5px;
+
+    color: #FFFFFF;
+}
+
+.added_diet {
+    background: #E4F6FF;
+}
+
+.add_diet {
+    width: 118px;
+    height: 60px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+
+    color: #247AA0;
+}
+
+.remove_diet_btn {
+    width: 20px;
     height: 20px;
 }
 
@@ -67,4 +112,28 @@
     font-size: 24px;
 
     color: #247AA0;
+}
+
+.font_580_60_32 {
+    width: 580px;
+    height: 60px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+
+    color: #247AA0;
+}
+
+.font_580_60_24 {
+    width: 580px;
+    height: 60px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+
+    color: #000000;
 }
