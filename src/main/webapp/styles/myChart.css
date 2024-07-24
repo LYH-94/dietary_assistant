@@ -14,6 +14,32 @@
     color: #FFFFFF;
 }
 
+.BodyCompositionData_list {
+    width: 416px;
+    height: 300px;
+
+    background: #FFFFFF;
+    border: 1px solid #8E8E93;
+}
+
+.BodyCompositionData_list_item {
+    width: 100%;
+    height: 60px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+
+    color: #000000;
+    background: #E4F6FF;
+}
+
+.scrollable_window {
+    height: 300px;
+    overflow: auto;
+}
+
 .font_86_60_24 {
     width: 86px;
     height: 60px;
@@ -29,6 +55,30 @@
 .font_100_60_24 {
     width: 100px;
     height: 60px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+
+    color: #247AA0;
+}
+
+.font_196_60_24 {
+    width: 196px;
+    height: 60px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+
+    color: #247AA0;
+}
+
+.font_1000_83_24 {
+    width: 1000px;
+    height: 83px;
 
     font-family: 'Inter';
     font-style: normal;

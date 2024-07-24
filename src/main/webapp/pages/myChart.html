@@ -76,6 +76,7 @@
                     <a href="..." class="d-flex justify-content-start align-items-center font_100_60_24" style="margin-left: 24px;">前 30 天</a>
                     <a href="..." class="d-flex justify-content-start align-items-center font_100_60_24" style="margin-left: 24px;">前 90 天</a>
                     <a href="..." class="d-flex justify-content-start align-items-center font_100_60_24" style="margin-left: 24px;">前 180 天</a>
+                    <a href="..." class="d-flex justify-content-start align-items-center font_100_60_24" style="margin-left: 24px;">All</a>
                 </div>
             </div>
 
@@ -84,6 +85,26 @@
                 <div id="app" class="col d-flex justify-content-center pad_0" style="height: 500px;">
                     <canvas id="myChart"></canvas>
                     <!--<button @click="changeData('ChangeData~')">Change data</button>-->
+                </div>
+            </div>
+
+            <div class="d-flex pad_0">
+                <span class="col d-flex justify-content-start align-items-center font_1000_83_24" style="margin-left: 200px;">
+                    體態數據列表：日期 - 體重 - 體脂肪率 - 骨筋骼率
+                    <a href="..." style="margin-left: 350px; padding: 0px 20px 0px 0px; text-decoration: none;">修改</a>
+                    <a href="..." style="text-decoration: none; color: red;">刪除</a>
+                </span>
+            </div>
+
+            <div class="d-flex pad_0 justify-content-center">
+                <!-- 體態數據列表選單 -->
+                <div class="scrollable_window BodyCompositionData_list">
+                    <span class="d-flex align-items-center BodyCompositionData_list_item" style="margin-bottom: 3px; padding-left: 10px;">2024/01/06 - 70 kg - 18.0 % - 38.5%</span>
+                    <span class="d-flex align-items-center BodyCompositionData_list_item" style="margin-bottom: 3px; padding-left: 10px;">2024/01/05 - 71 kg - 18.1 % - 38.4%</span>
+                    <span class="d-flex align-items-center BodyCompositionData_list_item" style="margin-bottom: 3px; padding-left: 10px;">2024/01/04 - 72 kg - 18.2 % - 38.3%</span>
+                    <span class="d-flex align-items-center BodyCompositionData_list_item" style="margin-bottom: 3px; padding-left: 10px;">2024/01/03 - 73 kg - 18.3 % - 38.2%</span>
+                    <span class="d-flex align-items-center BodyCompositionData_list_item" style="margin-bottom: 3px; padding-left: 10px;">2024/01/02 - 74 kg - 18.4 % - 38.1%</span>
+                    <span class="d-flex align-items-center BodyCompositionData_list_item" style="margin-bottom: 3px; padding-left: 10px;">2024/01/01 - 75 kg - 18.5 % - 38.0%</span>
                 </div>
             </div>
         </div>
