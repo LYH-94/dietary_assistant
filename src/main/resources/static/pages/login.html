@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- bootstrap 需要的響應式中繼標籤 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dietary assistant</title>
+
+    <!-- CSS -->
+    <!-- 用 CDN 方式引入 Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- 引入 inder 字體 -->
+    <link href="https://fonts.googleapis.com/css2?family=Inder&display=swap" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="../styles/common.css">
+    <link type="text/css" rel="stylesheet" href="../styles/login.css">
+
+    <!-- JavaScript -->
+    <!-- 用 CDN 方式引入 Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</head>
+<body class="background">
+    <div class="container-fluid pad_0">
+        <!-- row 1 -->
+        <div class="row d-flex justify-content-end mar_0">
+            <div class="col-6 d-flex justify-content-center pad_0">
+                <span class="d-flex justify-content-center align-items-center title_text" style="margin-top: 60px">Dietary Assistant</span>
+            </div>
+        </div>
+
+        <!-- row 2 -->
+        <div class="row d-flex justify-content-end mar_0">
+            <div class="col-6 d-flex justify-content-center pad_0">
+                <span class="d-flex justify-content-center align-items-center font_32">Log in</span>
+            </div>
+        </div>
+
+        <!-- row 3 -->
+        <div class="row d-flex justify-content-end mar_0">
+            <div class="col-6 d-flex justify-content-center pad_0">
+                <div class="row mar_0">
+                    <form action="..." method="post" class="pad_0 login_form_background">
+                        <!-- 帳號 -->
+                        <div class="d-flex">
+                            <span class="d-flex justify-content-center align-items-center font_32" style="margin: 60px 0px 0px 60px;">帳號：</span>
+                            <input type="text" id="account" name="account" class="input_box" style="margin-top: 60px">
+                        </div>
+                        <!-- 密碼 -->
+                        <div class="d-flex">
+                            <span class="d-flex justify-content-center align-items-center font_32" style="margin: 60px 0px 0px 60px;">密碼：</span>
+                            <input type="text" id="password" name="password" class="input_box" style="margin-top: 60px">
+                        </div>
+                        <!-- 分隔線 -->
+                        <div class="d-flex divider" style="margin: 60px 60px 0px 60px;"></div>
+                        <!-- 按鈕 -->
+                        <div class="d-flex">
+                            <input type="submit" value="登入" class="bor_pad_0 login_signup_btn font_32" style="margin: 60px 0px 0px 110px;">
+                            <input type="button" value="註冊" class="bor_pad_0 login_signup_btn font_32" style="margin: 60px 0px 0px 24px;">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

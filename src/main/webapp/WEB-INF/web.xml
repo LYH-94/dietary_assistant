@@ -4,4 +4,75 @@
          xsi:schemaLocation="http://java.jcp.com/xml/ns/javaee http://java.jcp.com/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
 
+    <!-- 1.配置 spring.web 的編碼過濾器 (CharacterEncodingFilter) -->
+    <filter>
+        <filter-name>CharacterEncodingFilter</filter-name>
+        <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+        <!-- 設置編碼格式 UTF-8。 -->
+        <init-param>
+            <param-name>encoding</param-name>
+            <param-value>UTF-8</param-value>
+        </init-param>
+        <!-- 根據原始碼，若想設置 "響應" 的編碼格式，那就需要將 forceResponseEncoding 變數設置為 true。若為 false 或沒設置則表示只設置 "請求" 的編碼格式。 -->
+        <init-param>
+            <param-name>forceResponseEncoding</param-name>
+            <param-value>true</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>CharacterEncodingFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <!-- 2.配置處理請求方式的過濾器 (HiddenHttpMethodFilter) -->
+    <filter>
+        <filter-name>HiddenHttpMethodFilter</filter-name>
+        <filter-class>org.springframework.web.filter.HiddenHttpMethodFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>HiddenHttpMethodFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <!-- 3.配置 SpringMVC 的核心控制器 (DispatcherServlet) -->
+    <servlet>
+        <servlet-name>springMVC</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <!-- 通過 <init-param> 初始化參數標籤來指定 Spring MVC 配置文件的位置和名稱。 -->
+        <init-param>
+            <!-- contextConfigLocation 為固定值。 -->
+            <param-name>contextConfigLocation</param-name>
+            <!--
+            使用 classpath: 表示從類路徑查找配置文件，指的就是 java 目錄和 resources 目錄，例如 Maven 工程中的 src/main/resources。
+            要記得在 resources 目錄下創建一個 springMVC.xml 文件，否則會找不到。
+             -->
+            <param-value>classpath:springMVC.xml</param-value>
+        </init-param>
+        <!--
+        作為框架的核心組件，在啟動過程中有大量的初始化操作要執行，
+        而這些操作放在第一次請求時才執行會嚴重影響訪問速度，
+        因此需要在通過 <load-on-startup> 標籤將 DispatcherServlet 的初始化時間提前到伺服器啟動時進行。
+        -->
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>springMVC</servlet-name>
+        <!--
+        設定 spring MVC 的 DispatcherServlet 所能處理的請求的請求路徑。
+        符號 / - 所符合的請求可以是 /login 或 .html 或 .js 或 .css 方式的請求路徑，
+        但是 / 不能匹配 .jsp 請求路徑的請求。
+        -->
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+
+    <!-- 4.配置 spring.web 的監聽器 (ContextLoaderListener)，在伺服器啟動時載入 Spring 的配置文件 -->
+        <!-- 設置 spring 配置文件自定義的位置和名稱 -->
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>classpath:spring.xml</param-value>
+    </context-param>
+
 </web-app>

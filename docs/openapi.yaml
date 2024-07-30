@@ -1,0 +1,763 @@
+openapi: 3.0.3
+info:
+  title: Dietary assistant API
+  version: 1.0.0
+servers:
+  - url: http://localhost:8080
+paths:
+  /page/index.html:
+    get:
+      summary: 訪問 index 頁面
+      description: 
+        訪問 index 頁面後，還需要相關的數據，因此在發送 /page/index.html 請求後，
+        接著發送 /index 請求。
+      tags:
+        - Index
+      responses:
+        '200':
+          description: index 頁面響應成功
+          content:
+            text/html:
+              schema:
+                type: string
+        '401':
+          description: 身分驗證失敗返回用戶登入頁
+          content:
+            text/html:
+              schema:
+                type: string
+        '404':
+          description: 找不到該資源
+  /index:
+    get:
+      summary: 查詢 index 頁面需要的數據
+      description: 
+        訪問 index 頁面後，還需要相關的數據，因此在發送 /page/index.html 請求後，
+        接著發送 /index 請求。
+        而預設為顯示用戶的飲食日記，因此接著訪問 /page/dietDiary.html 請求。
+      tags:
+        - Index
+      responses:
+        '200':
+          description: 查詢用戶資訊成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserInfo_nickName'
+        '401':
+          description: 身分驗證失敗返回用戶登入頁
+          content:
+            text/html:
+              schema:
+                type: string
+        '404':
+          description: 找不到該資源
+  /page/login.html:
+    get:
+      summary: 訪問用戶登入頁
+      security: []    # 無需身份驗證
+      tags:
+        - User
+      responses:
+        '200':
+          description: 用戶登入頁響應成功
+          content:
+            text/html:
+              schema:
+                type: string
+        '404':
+          description: 找不到該資源
+  /login:
+    post:
+      summary: 登入用戶
+      tags:
+        - User
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                account:
+                  type: string
+                password:
+                  type: string
+      responses:
+        '200':
+          description: 登入成功並返回 index 頁面
+          headers:
+            Set-Cookie:
+              description: 用於驗證用戶的 session
+              schema:
+                type: string
+                example: JSESSIONID=abcde12345;
+          content:
+            text/html:
+              schema:
+                type: string
+        '401':
+          description: 身分驗證失敗返回用戶登入頁
+          content:
+            text/html:
+              schema:
+                type: string
+  /logout:
+    post:
+      summary: 登出用戶
+      tags:
+        - User
+      responses:
+        '200':
+          description: 用戶登出成功並返回用戶登入頁
+          content:
+            text/html:
+              schema:
+                type: string
+        '401':
+          description: 身分驗證失敗返回用戶登入頁
+          content:
+            text/html:
+              schema:
+                type: string
+        '404':
+          description: 找不到該資源
+  /page/signup.html:
+    get:
+      summary: 訪問用戶註冊頁
+      security: []    # 無需身份驗證
+      tags:
+        - User
+      responses:
+        '200':
+          description: 用戶註冊頁響應成功
+          content:
+            text/html:
+              schema:
+                type: string
+        '404':
+          description: 找不到該資源
+  /signup:
+    post:
+      summary: 註冊用戶
+      security: []    # 無需身份驗證
+      tags:
+        - User
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                account:
+                  type: string
+                password:
+                  type: string
+                nickName:
+                  type: string
+                email:
+                  type: string
+      responses:
+        '200':
+          description: 註冊成功並返回 index 頁面
+          headers:
+            Set-Cookie:
+              description: 用於驗證用戶的 session
+              schema:
+                type: string
+                example: JSESSIONID=abcde12345;
+          content:
+            text/html:
+              schema:
+                type: string
+        '400':
+          description: 註冊失敗返回用戶註冊頁
+          content:
+            text/html:
+              schema:
+                type: string
+  
+  /page/userInfo.html:
+    get:
+      summary: 訪問用戶資訊頁
+      description: 
+        訪問用戶資訊頁後，還需要相關的數據，因此在發送 /page/userInfo.html 請求後，
+        接著發送 /userInfo 請求。
+      tags:
+        - User
+      responses:
+        '200':
+          description: 用戶資訊頁響應成功
+          content:
+            text/html:
+              schema:
+                type: string
+        '401':
+          description: 身分驗證失敗返回用戶登入頁
+          content:
+            text/html:
+              schema:
+                type: string
+        '404':
+          description: 找不到該資源
+  /userInfo:
+    get:
+      summary: 查詢用戶資訊
+      description: 
+        訪問用戶資訊頁後，還需要相關的數據，因此在發送 /page/userInfo.html 請求後，
+        接著發送 /userInfo 請求。
+      tags:
+        - User
+      responses:
+        '200':
+          description: 查詢用戶資訊成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+        '401':
+          description: 身分驗證失敗返回用戶登入頁
+          content:
+            text/html:
+              schema:
+                type: string
+    put:
+      summary: 更新用戶資訊並返回更新後的資訊
+      tags:
+        - User
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                account:
+                  type: string
+                password:
+                  type: string
+                nickName:
+                  type: string
+                email:
+                  type: string
+                targetCalories:
+                  type: integer
+                carbohydrateRatio:
+                  type: integer
+                fatRatio:
+                  type: integer
+                proteinRatio:
+                  type: integer
+      responses:
+        '200':
+          description: 更新用戶資訊成功並返回更新後的資訊
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+        '401':
+          description: 身分驗證失敗返回用戶登入頁
+          content:
+            text/html:
+              schema:
+                type: string
+  /page/dietDiary.html:
+    get:
+      summary: 訪問用戶的飲食日記頁
+      description: 
+        訪問飲食日記頁後，還需要相關的數據，因此在發送 /page/dietDiary.html 請求後，
+        接著發送 /dietDiary 請求。
+      tags:
+        - DietDiary
+      responses:
+        '200':
+          description: 飲食日記頁響應成功
+          content:
+            text/html:
+              schema:
+                type: string
+        '401':
+          description: 身分驗證失敗返回用戶登入頁
+          content:
+            text/html:
+              schema:
+                type: string
+        '404':
+          description: 找不到該資源
+  /dietDiary:
+    get:
+      summary: 查詢飲食日記頁需要的數據(查詢當天及前後三天的飲食紀錄)
+      description: 
+        訪問飲食日記頁後，還需要相關的數據，因此在發送 /page/dietDiary.html 請求後，
+        接著發送 /dietDiary 請求。
+      tags:
+        - DietDiary
+      responses:
+        '200':
+          description: 查詢飲食日記頁所需數據成功
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DietDiary'
+        '401':
+          description: 身分驗證失敗返回用戶登入頁
+          content:
+            text/html:
+              schema:
+                type: string
+  /dietDiary/{date}:
+    get:
+      summary: 查詢飲食日記頁需要的數據(查詢指定日期及前後三天的飲食紀錄)
+      parameters:
+        - in: path
+          name: date
+          schema:
+            type: string
+            format: date
+          required: true
+          description: 指定日期
+      tags:
+        - DietDiary
+      responses:
+        '200':
+          description: 查詢飲食日記頁所需數據成功
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DietDiary'
+        '401':
+          description: 身分驗證失敗返回用戶登入頁
+          content:
+            text/html:
+              schema:
+                type: string
+  /dietDiary/{id}/{date}:
+    delete:
+      summary: 刪除指定 id 的飲食紀錄並返回指定日期及前後三天的飲食紀錄(刪除紀錄後的紀錄)
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: integer
+          required: true
+          description: 指定飲食紀錄的 id
+        - in: path
+          name: date
+          schema:
+            type: string
+            format: date
+          required: true
+          description: 指定日期
+      tags:
+        - DietDiary
+      responses:
+        '200':
+          description: 成功刪除指定紀錄並返回指定日期及前後三天的飲食紀錄(刪除紀錄後的紀錄)
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DietDiary'
+        '401':
+          description: 身分驗證失敗返回用戶登入頁
+          content:
+            text/html:
+              schema:
+                type: string
+  /page/myFood.html:
+    get:
+      summary: 訪問用戶的我的食品頁
+      description: 
+        訪問我的食品頁後，還需要相關的數據，因此在發送 /page/myFood.html 請求後，
+        接著發送 /myFood 請求。
+      tags:
+        - MyFood
+      responses:
+        '200':
+          description: 我的食品頁響應成功
+          content:
+            text/html:
+              schema:
+                type: string
+        '401':
+          description: 身分驗證失敗返回用戶登入頁
+          content:
+            text/html:
+              schema:
+                type: string
+        '404':
+          description: 找不到該資源
+  /myFood:
+    get:
+      summary: 查詢我的食品頁需要的數據
+      description: 
+        訪問我的食品頁後，還需要相關的數據，因此在發送 /page/myFood.html 請求後，
+        接著發送 /myFood 請求。
+      tags:
+        - MyFood
+      responses:
+        '200':
+          description: 查詢我的食品頁所需數據成功
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Food'
+        '401':
+          description: 身分驗證失敗返回用戶登入頁
+          content:
+            text/html:
+              schema:
+                type: string
+    put:
+      summary: 更新指定的食品並返回更新後的所有食品
+      tags:
+        - MyFood
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Food'
+      responses:
+        '200':
+          description: 更新食品成功並返回更新後的所有食品
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Food'
+        '401':
+          description: 身分驗證失敗返回用戶登入頁
+          content:
+            text/html:
+              schema:
+                type: string
+  /myFood/{date}:
+    post:
+      summary: 新增食品至飲食日記並返回飲食日記頁。
+        若用戶的食品列表中沒有該食品紀錄，則先添加至用戶的食品列表中。
+      description: 
+        返回飲食日記頁後，還需要相關的數據，因此需要接著發送 /dietDiary 請求來獲取新的飲食紀錄。
+      parameters:
+        - in: path
+          name: date
+          schema:
+            type: string
+            format: date
+          required: true
+          description: 指定日期
+      tags:
+        - MyFood
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Food'
+      responses:
+        '200':
+          description: 新增食品至飲食日記並返回飲食日記頁成功。
+            若用戶的食品列表中沒有該食品紀錄，則先添加至用戶的食品列表中。
+          content:
+            text/html:
+              schema:
+                type: string
+        '401':
+          description: 身分驗證失敗返回用戶登入頁
+          content:
+            text/html:
+              schema:
+                type: string
+        '404':
+          description: 找不到該資源
+  /myFood/{id}:
+    delete:
+      summary: 刪除指定的食品並返回刪除後的所有食品
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: integer
+          required: true
+          description: 要刪除的食品的 id
+      tags:
+        - MyFood
+      responses:
+        '200':
+          description: 刪除指定食成功品並返回刪除後的所有食品
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Food'
+        '401':
+          description: 身分驗證失敗返回用戶登入頁
+          content:
+            text/html:
+              schema:
+                type: string
+  /myFood/{foodName}:
+    get:
+      summary: 查詢與 foodName 相關的食品
+      parameters:
+        - in: path
+          name: foodName
+          schema:
+            type: string
+          required: true
+          description: 要搜尋的食品名稱
+      tags:
+        - MyFood
+      responses:
+        '200':
+          description: 查詢與 foodName 相關的食品成功
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Food'
+        '401':
+          description: 身分驗證失敗返回用戶登入頁
+          content:
+            text/html:
+              schema:
+                type: string
+  /page/myChart.html:
+    get:
+      summary: 訪問用戶的我的圖表頁
+      description: 
+        訪問我的圖表頁後，還需要相關的數據，因此在發送 /page/myChart.html 請求後，
+        接著發送 /myChart 請求。
+      tags:
+        - MyChart
+      responses:
+        '200':
+          description: 我的圖表頁響應成功
+          content:
+            text/html:
+              schema:
+                type: string
+        '401':
+          description: 身分驗證失敗返回用戶登入頁
+          content:
+            text/html:
+              schema:
+                type: string
+        '404':
+          description: 找不到該資源
+  /myChart:
+    get:
+      summary: 查詢我的圖表頁需要的數據
+      description: 
+        訪問我的圖表頁後，還需要相關的數據，因此在發送 /page/myChart.html 請求後，
+        接著發送 /myChart 請求。
+      tags:
+        - MyChart
+      responses:
+        '200':
+          description: 查詢我的圖表頁所需數據成功
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BodyCompositionData'
+        '401':
+          description: 身分驗證失敗返回用戶登入頁
+          content:
+            text/html:
+              schema:
+                type: string
+    post:
+      summary: 新增用戶體態數據
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/BodyCompositionData'
+      tags:
+        - MyChart
+      responses:
+        '200':
+          description: 新增用戶體態數據成功返回新增完成後的所有體態數據
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BodyCompositionData'
+        '401':
+          description: 身分驗證失敗返回用戶登入頁
+          content:
+            text/html:
+              schema:
+                type: string
+    put:
+      summary: 更新指定的體態數據並返回更新後的所有數據
+      tags:
+        - MyChart
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/BodyCompositionData'
+      responses:
+        '200':
+          description: 更新體態數據成功並返回更新後的所有數據
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BodyCompositionData'
+        '401':
+          description: 身分驗證失敗返回用戶登入頁
+          content:
+            text/html:
+              schema:
+                type: string
+  /myChart/{id}:
+    delete:
+      summary: 刪除指定的體態數據並返回刪除數據後的所有體態數據
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: integer
+          required: true
+          description: 要刪除的體態數據的 id
+      tags:
+        - MyChart
+      responses:
+        '200':
+          description: 刪除指定的體態數據成功並返回刪除數據後的所有體態數據
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BodyCompositionData'
+        '401':
+          description: 身分驗證失敗返回用戶登入頁
+          content:
+            text/html:
+              schema:
+                type: string
+components:
+  schemas:
+    User:
+      type: object
+      properties:
+        id:
+          type: integer
+        account:
+          type: string
+        password:
+          type: string
+        UserInfo:
+          $ref: '#/components/schemas/UserInfo'
+    UserInfo:
+      type: object
+      properties:
+        id:
+          type: integer
+        owner:
+          type: integer
+        nickName:
+          type: string
+        email:
+          type: string
+        targetCalories:
+          type: integer
+        carbohydrateRatio:
+          type: integer
+        fatRatio:
+          type: integer
+        proteinRatio:
+          type: integer
+    UserInfo_nickName:
+      type: object
+      properties:
+        nickName:
+          type: string
+    DietDiary:
+      type: object
+      properties:
+        id:
+          type: integer
+        owner:
+          type: integer
+        date:
+          type: string
+          format: date
+        food:
+          $ref: '#/components/schemas/Food'
+        portionSize:
+          type: integer
+        threeMeals:
+          type: string
+          enum:
+            - 早餐
+            - 午餐
+            - 晚餐
+    Food:
+      type: object
+      properties:
+        id:
+          type: integer
+        owner:
+          type: integer
+        foodName:
+          type: string
+        calories:
+          type: integer
+        carbohydrate:
+          type: integer
+        fat:
+          type: integer
+        protein:
+          type: integer
+        portionSize:
+          type: integer
+    BodyCompositionData:
+      type: object
+      properties:
+        id:
+          type: integer
+        owner:
+          type: integer
+        date:
+          type: string
+          format: date
+        weight:
+          type: integer
+        bodyFat:
+          type: integer
+        skeletalMuscleMass:
+          type: integer
+  securitySchemes:
+    CookieAuth:
+      type: apiKey
+      in: cookie
+      name: JSESSIONID
+security:
+  - CookieAuth: []
+tags:
+  - name: Index
+  - name: User
+  - name: DietDiary
+  - name: MyFood
+  - name: MyChart

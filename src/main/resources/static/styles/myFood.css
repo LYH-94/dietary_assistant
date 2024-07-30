@@ -1,0 +1,114 @@
+.search_myFood_form {
+    width: 416px;
+    height: 60px;
+
+    background: #FFFFFF;
+    border: 5px solid #AAC6D2;
+    border-radius: 10px;
+}
+
+.search_myFood_input {
+    width: 356px;
+    height: 100%;
+
+    border: 5px solid #FFFFFF;
+    border-radius: 5px;
+}
+
+.search_myFood_btn {
+    width: 40px;
+    height: 40px;
+
+    background: url(../images/search.svg);
+}
+
+.food_database {
+    border-left: 1px solid #AAC6D2;
+}
+
+.scrollable_window {
+    height: 300px;
+    overflow: auto;
+}
+
+.food_list {
+    width: 416px;
+    height: 300px;
+
+    background: #FFFFFF;
+    border: 1px solid #8E8E93;
+}
+
+.food_list_item {
+    width: 100%;
+    height: 60px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+
+    color: #000000;
+    background: #E4F6FF;
+}
+
+.nutrition_input {
+    width: 150px;
+    height: 40px;
+
+    background: #FFFFFF;
+    border: 1px solid #AAC6D2;
+    border-radius: 10px;
+}
+
+.nutrition_btn {
+    width: 86px;
+    height: 40px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+
+    background: #66CBE9;
+    border: 1px solid #66CBE9;
+    border-radius: 10px;
+    color: #FFFFFF;
+}
+
+.font_86_60_24 {
+    width: 86px;
+    height: 60px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+
+    color: #247AA0;
+}
+
+.font_120_60_24 {
+    width: 120px;
+    height: 60px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+
+    color: #247AA0;
+}
+
+.font_196_60_24 {
+    width: 196px;
+    height: 60px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+
+    color: #247AA0;
+}
