@@ -5,9 +5,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7a749b76-b525-4440-8212-867c815d75bc" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/docs/dietary_assistant_ERmodel.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/dietary_assistant_db.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/openapi.yaml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/lyh/dietary_assistant/controller/ControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lyh/dietary_assistant/mapper/BodyCompositionDataMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lyh/dietary_assistant/mapper/DietDiaryMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lyh/dietary_assistant/mapper/FoodMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lyh/dietary_assistant/mapper/UserInfoMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lyh/dietary_assistant/mapper/UserMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lyh/dietary_assistant/pojo/BodyCompositionData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lyh/dietary_assistant/pojo/BodyCompositionDataExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lyh/dietary_assistant/pojo/DietDiary.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lyh/dietary_assistant/pojo/DietDiaryExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lyh/dietary_assistant/pojo/Food.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lyh/dietary_assistant/pojo/FoodExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lyh/dietary_assistant/pojo/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lyh/dietary_assistant/pojo/UserExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lyh/dietary_assistant/pojo/UserInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lyh/dietary_assistant/pojo/UserInfoExample.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/lyh/dietary_assistant/service/ServiceTest.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/lyh/dietary_assistant/service/impl/ServiceTestImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/lyh/dietary_assistant/mapper/BodyCompositionDataMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/lyh/dietary_assistant/mapper/DietDiaryMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/lyh/dietary_assistant/mapper/FoodMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/lyh/dietary_assistant/mapper/UserInfoMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/lyh/dietary_assistant/mapper/UserMapper.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/jdbc.properties" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" afterDir="false" />
@@ -15,6 +38,71 @@
       <change afterPath="$PROJECT_DIR$/src/main/resources/springMVC.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/static/pages/index.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/test/java/com/lyh/dietary_assistant/mapperTest/MyMapperTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lyh/dietary_assistant/controller/ControllerTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lyh/dietary_assistant/mapper/BodyCompositionDataMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lyh/dietary_assistant/mapper/BodyCompositionDataMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lyh/dietary_assistant/mapper/DietDiaryMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lyh/dietary_assistant/mapper/DietDiaryMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lyh/dietary_assistant/mapper/FoodMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lyh/dietary_assistant/mapper/FoodMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lyh/dietary_assistant/mapper/UserInfoMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lyh/dietary_assistant/mapper/UserInfoMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lyh/dietary_assistant/mapper/UserMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lyh/dietary_assistant/mapper/UserMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lyh/dietary_assistant/pojo/BodyCompositionData.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lyh/dietary_assistant/pojo/BodyCompositionDataExample$Criteria.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lyh/dietary_assistant/pojo/BodyCompositionDataExample$Criterion.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lyh/dietary_assistant/pojo/BodyCompositionDataExample$GeneratedCriteria.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lyh/dietary_assistant/pojo/BodyCompositionDataExample.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lyh/dietary_assistant/pojo/DietDiary.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lyh/dietary_assistant/pojo/DietDiaryExample$Criteria.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lyh/dietary_assistant/pojo/DietDiaryExample$Criterion.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lyh/dietary_assistant/pojo/DietDiaryExample$GeneratedCriteria.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lyh/dietary_assistant/pojo/DietDiaryExample.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lyh/dietary_assistant/pojo/Food.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lyh/dietary_assistant/pojo/FoodExample$Criteria.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lyh/dietary_assistant/pojo/FoodExample$Criterion.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lyh/dietary_assistant/pojo/FoodExample$GeneratedCriteria.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lyh/dietary_assistant/pojo/FoodExample.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lyh/dietary_assistant/pojo/User.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lyh/dietary_assistant/pojo/UserExample$Criteria.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lyh/dietary_assistant/pojo/UserExample$Criterion.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lyh/dietary_assistant/pojo/UserExample$GeneratedCriteria.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lyh/dietary_assistant/pojo/UserExample.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lyh/dietary_assistant/pojo/UserInfo.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lyh/dietary_assistant/pojo/UserInfoExample$Criteria.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lyh/dietary_assistant/pojo/UserInfoExample$Criterion.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lyh/dietary_assistant/pojo/UserInfoExample$GeneratedCriteria.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lyh/dietary_assistant/pojo/UserInfoExample.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lyh/dietary_assistant/service/ServiceTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lyh/dietary_assistant/service/impl/ServiceTestImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/generatorConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/jdbc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mybatis-config.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/spring.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/springMVC.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/images/0000.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/images/arrow_tomorrow.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/images/arrow_yesterday.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/images/remove.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/images/search.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/pages/dietDiary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/pages/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/pages/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/pages/myChart.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/pages/myFood.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/pages/singup.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/pages/userInfo.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/scripts/chartJS.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/scripts/dietDiary.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/styles/common.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/styles/dietDiary.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/styles/login.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/styles/myChart.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/styles/myFood.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/styles/singup.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/styles/userInfo.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/com/lyh/dietary_assistant/mapperTest/MyMapperTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
