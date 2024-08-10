@@ -70,7 +70,6 @@ public class UserInfo {
      * This method returns the value of the database column t_user_info.id
      *
      * @return the value of t_user_info.id
-     *
      * @mbggenerated Tue Jul 30 20:26:00 CST 2024
      */
     public Integer getId() {
@@ -82,7 +81,6 @@ public class UserInfo {
      * This method sets the value of the database column t_user_info.id
      *
      * @param id the value for t_user_info.id
-     *
      * @mbggenerated Tue Jul 30 20:26:00 CST 2024
      */
     public void setId(Integer id) {
@@ -94,7 +92,6 @@ public class UserInfo {
      * This method returns the value of the database column t_user_info.owner
      *
      * @return the value of t_user_info.owner
-     *
      * @mbggenerated Tue Jul 30 20:26:00 CST 2024
      */
     public Integer getOwner() {
@@ -106,7 +103,6 @@ public class UserInfo {
      * This method sets the value of the database column t_user_info.owner
      *
      * @param owner the value for t_user_info.owner
-     *
      * @mbggenerated Tue Jul 30 20:26:00 CST 2024
      */
     public void setOwner(Integer owner) {
@@ -118,7 +114,6 @@ public class UserInfo {
      * This method returns the value of the database column t_user_info.nickName
      *
      * @return the value of t_user_info.nickName
-     *
      * @mbggenerated Tue Jul 30 20:26:00 CST 2024
      */
     public String getNickname() {
@@ -130,7 +125,6 @@ public class UserInfo {
      * This method sets the value of the database column t_user_info.nickName
      *
      * @param nickname the value for t_user_info.nickName
-     *
      * @mbggenerated Tue Jul 30 20:26:00 CST 2024
      */
     public void setNickname(String nickname) {
@@ -142,7 +136,6 @@ public class UserInfo {
      * This method returns the value of the database column t_user_info.email
      *
      * @return the value of t_user_info.email
-     *
      * @mbggenerated Tue Jul 30 20:26:00 CST 2024
      */
     public String getEmail() {
@@ -154,7 +147,6 @@ public class UserInfo {
      * This method sets the value of the database column t_user_info.email
      *
      * @param email the value for t_user_info.email
-     *
      * @mbggenerated Tue Jul 30 20:26:00 CST 2024
      */
     public void setEmail(String email) {
@@ -166,7 +158,6 @@ public class UserInfo {
      * This method returns the value of the database column t_user_info.targetCalories
      *
      * @return the value of t_user_info.targetCalories
-     *
      * @mbggenerated Tue Jul 30 20:26:00 CST 2024
      */
     public Short getTargetcalories() {
@@ -178,7 +169,6 @@ public class UserInfo {
      * This method sets the value of the database column t_user_info.targetCalories
      *
      * @param targetcalories the value for t_user_info.targetCalories
-     *
      * @mbggenerated Tue Jul 30 20:26:00 CST 2024
      */
     public void setTargetcalories(Short targetcalories) {
@@ -190,7 +180,6 @@ public class UserInfo {
      * This method returns the value of the database column t_user_info.carbohydrateRatio
      *
      * @return the value of t_user_info.carbohydrateRatio
-     *
      * @mbggenerated Tue Jul 30 20:26:00 CST 2024
      */
     public Byte getCarbohydrateratio() {
@@ -202,7 +191,6 @@ public class UserInfo {
      * This method sets the value of the database column t_user_info.carbohydrateRatio
      *
      * @param carbohydrateratio the value for t_user_info.carbohydrateRatio
-     *
      * @mbggenerated Tue Jul 30 20:26:00 CST 2024
      */
     public void setCarbohydrateratio(Byte carbohydrateratio) {
@@ -214,7 +202,6 @@ public class UserInfo {
      * This method returns the value of the database column t_user_info.fatRatio
      *
      * @return the value of t_user_info.fatRatio
-     *
      * @mbggenerated Tue Jul 30 20:26:00 CST 2024
      */
     public Byte getFatratio() {
@@ -226,7 +213,6 @@ public class UserInfo {
      * This method sets the value of the database column t_user_info.fatRatio
      *
      * @param fatratio the value for t_user_info.fatRatio
-     *
      * @mbggenerated Tue Jul 30 20:26:00 CST 2024
      */
     public void setFatratio(Byte fatratio) {
@@ -238,7 +224,6 @@ public class UserInfo {
      * This method returns the value of the database column t_user_info.proteinRatio
      *
      * @return the value of t_user_info.proteinRatio
-     *
      * @mbggenerated Tue Jul 30 20:26:00 CST 2024
      */
     public Byte getProteinratio() {
@@ -250,10 +235,24 @@ public class UserInfo {
      * This method sets the value of the database column t_user_info.proteinRatio
      *
      * @param proteinratio the value for t_user_info.proteinRatio
-     *
      * @mbggenerated Tue Jul 30 20:26:00 CST 2024
      */
     public void setProteinratio(Byte proteinratio) {
+        this.proteinratio = proteinratio;
+    }
+
+    // 以下是自己新增的程式碼。
+    public UserInfo() {
+    }
+
+    public UserInfo(Integer id, Integer owner, String nickname, String email, Short targetcalories, Byte carbohydrateratio, Byte fatratio, Byte proteinratio) {
+        this.id = id;
+        this.owner = owner;
+        this.nickname = nickname;
+        this.email = email;
+        this.targetcalories = targetcalories;
+        this.carbohydrateratio = carbohydrateratio;
+        this.fatratio = fatratio;
         this.proteinratio = proteinratio;
     }
 }

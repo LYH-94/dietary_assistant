@@ -30,7 +30,6 @@ public class User {
      * This method returns the value of the database column t_user.id
      *
      * @return the value of t_user.id
-     *
      * @mbggenerated Tue Jul 30 20:26:00 CST 2024
      */
     public Integer getId() {
@@ -42,7 +41,6 @@ public class User {
      * This method sets the value of the database column t_user.id
      *
      * @param id the value for t_user.id
-     *
      * @mbggenerated Tue Jul 30 20:26:00 CST 2024
      */
     public void setId(Integer id) {
@@ -54,7 +52,6 @@ public class User {
      * This method returns the value of the database column t_user.account
      *
      * @return the value of t_user.account
-     *
      * @mbggenerated Tue Jul 30 20:26:00 CST 2024
      */
     public String getAccount() {
@@ -66,7 +63,6 @@ public class User {
      * This method sets the value of the database column t_user.account
      *
      * @param account the value for t_user.account
-     *
      * @mbggenerated Tue Jul 30 20:26:00 CST 2024
      */
     public void setAccount(String account) {
@@ -78,7 +74,6 @@ public class User {
      * This method returns the value of the database column t_user.password
      *
      * @return the value of t_user.password
-     *
      * @mbggenerated Tue Jul 30 20:26:00 CST 2024
      */
     public String getPassword() {
@@ -90,10 +85,36 @@ public class User {
      * This method sets the value of the database column t_user.password
      *
      * @param password the value for t_user.password
-     *
      * @mbggenerated Tue Jul 30 20:26:00 CST 2024
      */
     public void setPassword(String password) {
         this.password = password == null ? null : password.trim();
+    }
+
+    // 以下是自己新增的程式碼。
+    private UserInfo userInfo = null;
+
+    public User() {
+    }
+
+    public User(Integer id, String account, String password) {
+        this.id = id;
+        this.account = account;
+        this.password = password;
+    }
+
+    public User(Integer id, String account, String password, UserInfo userInfo) {
+        this.id = id;
+        this.account = account;
+        this.password = password;
+        this.userInfo = userInfo;
+    }
+
+    public UserInfo getUserInfo() {
+        return userInfo;
+    }
+
+    public void setUserInfo(UserInfo userInfo) {
+        this.userInfo = userInfo;
     }
 }

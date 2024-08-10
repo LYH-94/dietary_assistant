@@ -56,7 +56,6 @@ public class DietDiary {
      * This method returns the value of the database column t_diet_diary.id
      *
      * @return the value of t_diet_diary.id
-     *
      * @mbggenerated Tue Jul 30 20:26:00 CST 2024
      */
     public Integer getId() {
@@ -68,7 +67,6 @@ public class DietDiary {
      * This method sets the value of the database column t_diet_diary.id
      *
      * @param id the value for t_diet_diary.id
-     *
      * @mbggenerated Tue Jul 30 20:26:00 CST 2024
      */
     public void setId(Integer id) {
@@ -80,7 +78,6 @@ public class DietDiary {
      * This method returns the value of the database column t_diet_diary.owner
      *
      * @return the value of t_diet_diary.owner
-     *
      * @mbggenerated Tue Jul 30 20:26:00 CST 2024
      */
     public Integer getOwner() {
@@ -92,7 +89,6 @@ public class DietDiary {
      * This method sets the value of the database column t_diet_diary.owner
      *
      * @param owner the value for t_diet_diary.owner
-     *
      * @mbggenerated Tue Jul 30 20:26:00 CST 2024
      */
     public void setOwner(Integer owner) {
@@ -104,7 +100,6 @@ public class DietDiary {
      * This method returns the value of the database column t_diet_diary.date
      *
      * @return the value of t_diet_diary.date
-     *
      * @mbggenerated Tue Jul 30 20:26:00 CST 2024
      */
     public Date getDate() {
@@ -116,7 +111,6 @@ public class DietDiary {
      * This method sets the value of the database column t_diet_diary.date
      *
      * @param date the value for t_diet_diary.date
-     *
      * @mbggenerated Tue Jul 30 20:26:00 CST 2024
      */
     public void setDate(Date date) {
@@ -128,7 +122,6 @@ public class DietDiary {
      * This method returns the value of the database column t_diet_diary.food
      *
      * @return the value of t_diet_diary.food
-     *
      * @mbggenerated Tue Jul 30 20:26:00 CST 2024
      */
     public Integer getFood() {
@@ -140,7 +133,6 @@ public class DietDiary {
      * This method sets the value of the database column t_diet_diary.food
      *
      * @param food the value for t_diet_diary.food
-     *
      * @mbggenerated Tue Jul 30 20:26:00 CST 2024
      */
     public void setFood(Integer food) {
@@ -152,7 +144,6 @@ public class DietDiary {
      * This method returns the value of the database column t_diet_diary.portionSize
      *
      * @return the value of t_diet_diary.portionSize
-     *
      * @mbggenerated Tue Jul 30 20:26:00 CST 2024
      */
     public Short getPortionsize() {
@@ -164,7 +155,6 @@ public class DietDiary {
      * This method sets the value of the database column t_diet_diary.portionSize
      *
      * @param portionsize the value for t_diet_diary.portionSize
-     *
      * @mbggenerated Tue Jul 30 20:26:00 CST 2024
      */
     public void setPortionsize(Short portionsize) {
@@ -176,7 +166,6 @@ public class DietDiary {
      * This method returns the value of the database column t_diet_diary.threeMeals
      *
      * @return the value of t_diet_diary.threeMeals
-     *
      * @mbggenerated Tue Jul 30 20:26:00 CST 2024
      */
     public String getThreemeals() {
@@ -188,10 +177,20 @@ public class DietDiary {
      * This method sets the value of the database column t_diet_diary.threeMeals
      *
      * @param threemeals the value for t_diet_diary.threeMeals
-     *
      * @mbggenerated Tue Jul 30 20:26:00 CST 2024
      */
     public void setThreemeals(String threemeals) {
         this.threemeals = threemeals == null ? null : threemeals.trim();
+    }
+
+    // 以下是自己新增的程式碼。
+    private Food myFood;
+
+    public Food getMyFood() {
+        return myFood;
+    }
+
+    public void setMyFood(Food myFood) {
+        this.myFood = myFood;
     }
 }

@@ -70,7 +70,6 @@ public class Food {
      * This method returns the value of the database column t_food.id
      *
      * @return the value of t_food.id
-     *
      * @mbggenerated Tue Jul 30 20:26:00 CST 2024
      */
     public Integer getId() {
@@ -82,7 +81,6 @@ public class Food {
      * This method sets the value of the database column t_food.id
      *
      * @param id the value for t_food.id
-     *
      * @mbggenerated Tue Jul 30 20:26:00 CST 2024
      */
     public void setId(Integer id) {
@@ -94,7 +92,6 @@ public class Food {
      * This method returns the value of the database column t_food.owner
      *
      * @return the value of t_food.owner
-     *
      * @mbggenerated Tue Jul 30 20:26:00 CST 2024
      */
     public Integer getOwner() {
@@ -106,7 +103,6 @@ public class Food {
      * This method sets the value of the database column t_food.owner
      *
      * @param owner the value for t_food.owner
-     *
      * @mbggenerated Tue Jul 30 20:26:00 CST 2024
      */
     public void setOwner(Integer owner) {
@@ -118,7 +114,6 @@ public class Food {
      * This method returns the value of the database column t_food.foodName
      *
      * @return the value of t_food.foodName
-     *
      * @mbggenerated Tue Jul 30 20:26:00 CST 2024
      */
     public String getFoodname() {
@@ -130,7 +125,6 @@ public class Food {
      * This method sets the value of the database column t_food.foodName
      *
      * @param foodname the value for t_food.foodName
-     *
      * @mbggenerated Tue Jul 30 20:26:00 CST 2024
      */
     public void setFoodname(String foodname) {
@@ -142,7 +136,6 @@ public class Food {
      * This method returns the value of the database column t_food.calories
      *
      * @return the value of t_food.calories
-     *
      * @mbggenerated Tue Jul 30 20:26:00 CST 2024
      */
     public Float getCalories() {
@@ -154,7 +147,6 @@ public class Food {
      * This method sets the value of the database column t_food.calories
      *
      * @param calories the value for t_food.calories
-     *
      * @mbggenerated Tue Jul 30 20:26:00 CST 2024
      */
     public void setCalories(Float calories) {
@@ -166,7 +158,6 @@ public class Food {
      * This method returns the value of the database column t_food.carbohydrate
      *
      * @return the value of t_food.carbohydrate
-     *
      * @mbggenerated Tue Jul 30 20:26:00 CST 2024
      */
     public Float getCarbohydrate() {
@@ -178,7 +169,6 @@ public class Food {
      * This method sets the value of the database column t_food.carbohydrate
      *
      * @param carbohydrate the value for t_food.carbohydrate
-     *
      * @mbggenerated Tue Jul 30 20:26:00 CST 2024
      */
     public void setCarbohydrate(Float carbohydrate) {
@@ -190,7 +180,6 @@ public class Food {
      * This method returns the value of the database column t_food.fat
      *
      * @return the value of t_food.fat
-     *
      * @mbggenerated Tue Jul 30 20:26:00 CST 2024
      */
     public Float getFat() {
@@ -202,7 +191,6 @@ public class Food {
      * This method sets the value of the database column t_food.fat
      *
      * @param fat the value for t_food.fat
-     *
      * @mbggenerated Tue Jul 30 20:26:00 CST 2024
      */
     public void setFat(Float fat) {
@@ -214,7 +202,6 @@ public class Food {
      * This method returns the value of the database column t_food.protein
      *
      * @return the value of t_food.protein
-     *
      * @mbggenerated Tue Jul 30 20:26:00 CST 2024
      */
     public Float getProtein() {
@@ -226,7 +213,6 @@ public class Food {
      * This method sets the value of the database column t_food.protein
      *
      * @param protein the value for t_food.protein
-     *
      * @mbggenerated Tue Jul 30 20:26:00 CST 2024
      */
     public void setProtein(Float protein) {
@@ -238,7 +224,6 @@ public class Food {
      * This method returns the value of the database column t_food.portionSize
      *
      * @return the value of t_food.portionSize
-     *
      * @mbggenerated Tue Jul 30 20:26:00 CST 2024
      */
     public Short getPortionsize() {
@@ -250,10 +235,25 @@ public class Food {
      * This method sets the value of the database column t_food.portionSize
      *
      * @param portionsize the value for t_food.portionSize
-     *
      * @mbggenerated Tue Jul 30 20:26:00 CST 2024
      */
     public void setPortionsize(Short portionsize) {
+        this.portionsize = portionsize;
+    }
+
+    // 以下是自己新增的程式碼。
+
+    public Food() {
+    }
+
+    public Food(Integer id, Integer owner, String foodname, Float calories, Float carbohydrate, Float fat, Float protein, Short portionsize) {
+        this.id = id;
+        this.owner = owner;
+        this.foodname = foodname;
+        this.calories = calories;
+        this.carbohydrate = carbohydrate;
+        this.fat = fat;
+        this.protein = protein;
         this.portionsize = portionsize;
     }
 }

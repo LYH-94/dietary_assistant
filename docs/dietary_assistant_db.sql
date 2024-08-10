@@ -36,11 +36,11 @@ CREATE TABLE IF NOT EXISTS `t_user_info`(
 
 /* 新增 t_user_info 數據表的數據。 */
 INSERT INTO `t_user_info`(`id`,`owner`,`nickName`,`email`,`targetCalories`,`carbohydrateRatio`,`fatRatio`,`proteinRatio`) VALUES
-(0,1,'nickName_A','nickName_A_abc@gmail.com','1750','50','25','25'),
-(0,2,'nickName_B','nickName_B_abc@gmail.com','1800','50','20','30'),
-(0,3,'nickName_C','nickName_C_abc@gmail.com','1630','40','20','40'),
-(0,4,'nickName_D','nickName_D_abc@gmail.com','1700','50','25','25'),
-(0,5,'nickName_E','nickName_E_abc@gmail.com','1520','50','25','25');
+(0,1,'nickName_A','nickName_A_abc@gmail.com',1750,50,25,25),
+(0,2,'nickName_B','nickName_B_abc@gmail.com',1800,50,20,30),
+(0,3,'nickName_C','nickName_C_abc@gmail.com',1630,40,20,40),
+(0,4,'nickName_D','nickName_D_abc@gmail.com',1700,50,25,25),
+(0,5,'nickName_E','nickName_E_abc@gmail.com',1520,50,25,25);
 
 /* 食品 - t_food */
 CREATE TABLE IF NOT EXISTS `t_food`(
@@ -103,8 +103,3 @@ INSERT INTO `t_body_composition_data`(`id`,`owner`,`date`,`weight`,`bodyFat`,`sk
 (0,1,'2024-07-25',76,26,35.5),
 (0,2,'2024-07-27',55.3,28.1,31.5),
 (0,2,'2024-07-26',56,28.7,30.5);
-
-
-
-
-

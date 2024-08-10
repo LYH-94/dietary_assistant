@@ -64,4 +64,7 @@
     <!-- 啟用事務的註解驅動：將使用註解 @Transactional 標示的方法或類中所有的方法進行事務管理。 -->
     <tx:annotation-driven transaction-manager="transactionManager"/>
 
+    <!-- 5.配置 RestTemplate，用於向第三方 API 發送請求。-->
+    <bean id="restTemplate" class="org.springframework.web.client.RestTemplate"></bean>
+
 </beans>
