@@ -21,8 +21,8 @@ public interface FoodController {
     // 刪除指定的食品並返回刪除完成後的所有食品
     public List<Food> deleteMyFood(HttpServletRequest req, Integer id);
 
-    // 從用戶的食品中查詢與 foodName 相關的食品
-    public List<Food> searchMyFood(HttpServletRequest req, String foodName);
+    // 從用戶的食品中查詢與 foodName 相關的食品。(該功能在前端 JavaScript 中完成了，後端就不用了，暫存於此。)
+    //public List<Food> searchMyFood(HttpServletRequest req, String foodName);
 
     // 從第三方資料庫(Edamam API)中查詢與 foodName 相關的食品
     public List<Food> searchFoodFromEdamam(String foodName) throws JsonProcessingException;

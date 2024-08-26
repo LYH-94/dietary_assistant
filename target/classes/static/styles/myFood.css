@@ -19,7 +19,7 @@
     width: 40px;
     height: 40px;
 
-    background: url(../images/search.svg);
+    background: url(/dietary_assistant/page/search.svg);
 }
 
 .food_database {
@@ -49,7 +49,6 @@
     font-size: 20px;
 
     color: #000000;
-    background: #E4F6FF;
 }
 
 .nutrition_input {
@@ -75,6 +74,34 @@
     border: 1px solid #66CBE9;
     border-radius: 10px;
     color: #FFFFFF;
+}
+
+.clickToChangeColor {
+    cursor: pointer;
+}
+
+.darkColor-background {
+    background-color: #247AA0;
+    color: white;
+}
+
+.lightColor-background {
+    background: #E4F6FF;
+    color: black;
+}
+
+.clickToChangeColor_Edamam {
+    cursor: pointer;
+}
+
+.darkColor-background_Edamam {
+    background-color: #247AA0;
+    color: white;
+}
+
+.lightColor-background_Edamam {
+    background: #E4F6FF;
+    color: black;
 }
 
 .font_86_60_24 {

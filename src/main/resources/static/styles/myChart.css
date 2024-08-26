@@ -40,6 +40,20 @@
     overflow: auto;
 }
 
+.clickToChangeColor_myChart {
+    cursor: pointer;
+}
+
+.darkColor-background_myChart {
+    background-color: #247AA0;
+    color: white;
+}
+
+.lightColor-background_myChart {
+    background: #E4F6FF;
+    color: black;
+}
+
 .font_86_60_24 {
     width: 86px;
     height: 60px;

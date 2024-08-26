@@ -1,153 +1,301 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <!-- bootstrap 需要的響應式中繼標籤 -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Dietary assistant</title>
-
-    <!-- CSS -->
-    <!-- 用 CDN 方式引入 Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <!-- 引入 inder 字體 -->
-    <link href="https://fonts.googleapis.com/css2?family=Inder&display=swap" rel="stylesheet">
-
-    <link type="text/css" rel="stylesheet" href="../styles/common.css">
-    <link type="text/css" rel="stylesheet" href="../styles/myFood.css">
-
-    <!-- JavaScript -->
-    <!-- 用 CDN 方式引入 Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous" defer></script>
-</head>
-<body>
-    <div class="container-fluid pad_0">
-        <!-- row 1 -->
-        <div class="row mar_0">
-            <div class="col-6 pad_0 title_text" style="margin: 0px 0px 0px 72px;">Dietary Assistant</div>
-            <div class="col d-flex justify-content-end align-items-center pad_0 font_196_60_24" style="margin: 20px 24px 0px 0px;">嗨~ user001</div>
-            <div class="col-1 d-flex justify-content-center align-items-center pad_0 font_86_60_24" style="margin: 20px 72px 0px 0px;">登出</div>
-        </div>
-
-        <!-- row 2 - navbar -->
-        <nav class="navbar navbar-expand-xl justify-content-center pad_0">
-            <div class="container-fluid d-flex justify-content-center flex-wrap pad_0 navbar_inner">
-                <button type="button" onclick="...()"
-                        class="bor_pad_0 navbar_btn">飲食日記</button>
-                <button type="button" onclick="...()"
-                        class="bor_pad_0 navbar_btn"
-                        style="background: #66CBE9;">我的食品</button>
-                <button type="button" onclick="...()"
-                        class="bor_pad_0 navbar_btn">圖表</button>
+<!-- row 3 -->
+<div id="myFood_vue_myFood" class="row justify-content-center" style="margin: 60px 0px 0px 0px;"
+     xmlns:v-bind="http://www.w3.org/1999/xhtml">
+    <!-- 我的食品 -->
+    <div class="col-6 pad_0">
+        <div style="margin: 0px 0px 0px 240px;">
+            <span class="d-flex align-items-center font_196_60_24">我的食品</span>
+            <!-- 食品搜尋 -->
+            <form class="d-flex align-items-center search_myFood_form">
+                <input type="text" id="search_myFood" name="search_myFood" v-model="search_myFood" class="pad_0 search_myFood_input">
+                <!-- 搜尋按紐 -->
+                <input type="button" @click="myFoodList_search()" class="bor_pad_0 search_myFood_btn" style="margin: 10px 10px 10px 10px;">
+            </form>
+            <span class="d-flex align-items-center font_196_60_24">食品列表</span>
+            <!-- 食品列表選單 -->
+            <div class="scrollable_window food_list">
+                <span v-for="myFood in myFoodList" @click="chooseFood(myFood)" class="d-flex align-items-center food_list_item clickToChangeColor lightColor-background" style="margin-bottom: 3px; padding-left: 10px;">{{ myFood.foodname }} , {{ myFood.portionsize }} g</span>
             </div>
-        </nav>
-
-        <!-- row 3 -->
-        <div class="row justify-content-center" style="margin: 60px 0px 0px 0px;">
-            <!-- 我的食品 -->
-            <div class="col-6 pad_0">
-                <div style="margin: 0px 0px 0px 240px;">
-                    <span class="d-flex align-items-center font_196_60_24">我的食品</span>
-                    <!-- 食品搜尋 -->
-                    <form action="..." method="post" class="d-flex align-items-center search_myFood_form">
-                        <input type="text" id="search_myFood" name="search_myFood" class="pad_0 search_myFood_input">
-                        <!-- 搜尋按紐 -->
-                        <input type="button" class="bor_pad_0 search_myFood_btn" style="margin: 10px 10px 10px 10px;">
-                    </form>
-                    <span class="d-flex align-items-center font_196_60_24">食品列表</span>
-                    <!-- 食品列表選單 -->
-                    <div class="scrollable_window food_list">
-                        <span class="d-flex align-items-center food_list_item" style="margin-bottom: 3px; padding-left: 10px;">7-11 - 起司貝果 , 1 份</span>
-                        <span class="d-flex align-items-center food_list_item" style="margin-bottom: 3px; padding-left: 10px;">摩斯漢堡 - 冰拿鐵咖啡 , 1 杯</span>
-                        <span class="d-flex align-items-center food_list_item" style="margin-bottom: 3px; padding-left: 10px;">蘑菇鐵板麵 , 1 份</span>
-                        <span class="d-flex align-items-center food_list_item" style="margin-bottom: 3px; padding-left: 10px;">111</span>
-                        <span class="d-flex align-items-center food_list_item" style="margin-bottom: 3px; padding-left: 10px;">222</span>
-                        <span class="d-flex align-items-center food_list_item" style="margin-bottom: 3px; padding-left: 10px;">333</span>
-                    </div>
-                    <!-- 三大營養素 -->
-                    <span class="d-flex align-items-center font_196_60_24">三大營養素</span>
-                    <form action="..." method="post">
-                        <!-- 熱量 (kcal) -->
-                        <div class="d-flex align-items-center">
-                            <span class="d-flex justify-content-start align-items-center font_120_60_24">熱量 (kcal)</span>
-                            <input type="text" id="calories" name="calories" class="pad_0 nutrition_input" style="margin-left: 24px;">
-                            <input type="submit" value="加入日記" class="pad_0 nutrition_btn" style="margin-left: 24px;">
-                        </div>
-                        <!-- 碳水 (g) -->
-                        <div class="d-flex align-items-center">
-                            <span class="d-flex justify-content-start align-items-center font_120_60_24">碳水 (g)</span>
-                            <input type="text" id="carbon" name="carbon" class="pad_0 nutrition_input" style="margin-left: 24px;">
-                            <input type="button" value="修改" class="pad_0 nutrition_btn" style="margin-left: 24px;">
-                        </div>
-                        <!-- 脂肪 (g) -->
-                        <div class="d-flex align-items-center">
-                            <span class="d-flex justify-content-start align-items-center font_120_60_24">脂肪 (g)</span>
-                            <input type="text" id="fat" name="fat" class="pad_0 nutrition_input" style="margin-left: 24px;">
-                            <input type="button" value="刪除" class="pad_0 nutrition_btn" style="margin-left: 24px;">
-                        </div>
-                        <!-- 蛋白質 (g) -->
-                        <div class="d-flex align-items-center">
-                            <span class="d-flex justify-content-start align-items-center font_120_60_24">蛋白質 (g)</span>
-                            <input type="text" id="protein" name="protein" class="pad_0 nutrition_input" style="margin-left: 24px;">
-                        </div>
-                    </form>
+            <!-- 三大營養素 -->
+            <span class="d-flex align-items-center font_196_60_24">三大營養素</span>
+            <form action="...">
+                <!-- 熱量 (kcal) -->
+                <div class="d-flex align-items-center">
+                    <span class="d-flex justify-content-start align-items-center font_120_60_24">熱量 (kcal)</span>
+                    <input type="text" id="calories_myFoodList" name="calories_myFoodList" v-bind:value="(calories_myFoodList).toFixed(2)" class="pad_0 nutrition_input" style="margin-left: 24px; text-align: center;" disabled>
+                    <input type="button" value="加入日記" onclick="init_addDietDiaryFromMyFood()" data-bs-toggle="modal" data-bs-target="#Modal_addFood" class="pad_0 nutrition_btn" style="margin-left: 24px;">
                 </div>
-            </div>
-
-            <!-- 食品資料庫 -->
-            <div class="col-6 pad_0 food_database">
-                <div style="margin: 0px 0px 0px 100px;">
-                    <span class="d-flex align-items-center font_196_60_24">食品資料庫</span>
-                    <!-- 食品搜尋 -->
-                    <form action="..." method="post" class="d-flex align-items-center search_myFood_form">
-                        <input type="text" id="search_foodDatabase" name="search_myFood" class="pad_0 search_myFood_input">
-                        <!-- 搜尋按紐 -->
-                        <input type="button" class="bor_pad_0 search_myFood_btn" style="margin: 10px 10px 10px 10px;">
-                    </form>
-                    <span class="d-flex align-items-center font_196_60_24">食品列表</span>
-                    <!-- 食品列表選單 -->
-                    <div class="scrollable_window food_list">
-                        <span class="d-flex align-items-center food_list_item" style="margin-bottom: 3px; padding-left: 10px;">7-11 - 起司貝果 , 1 份</span>
-                        <span class="d-flex align-items-center food_list_item" style="margin-bottom: 3px; padding-left: 10px;">摩斯漢堡 - 冰拿鐵咖啡 , 1 杯</span>
-                        <span class="d-flex align-items-center food_list_item" style="margin-bottom: 3px; padding-left: 10px;">蘑菇鐵板麵 , 1 份</span>
-                    </div>
-                    <!-- 三大營養素 -->
-                    <span class="d-flex align-items-center font_196_60_24">三大營養素</span>
-                    <form action="..." method="post">
-                        <!-- 熱量 (kcal) -->
-                        <div class="d-flex align-items-center">
-                            <span class="d-flex justify-content-start align-items-center font_120_60_24">熱量 (kcal)</span>
-                            <input type="text" id="calories2" name="calories2" class="pad_0 nutrition_input" style="margin-left: 24px;">
-                            <input type="submit" value="加入日記" class="pad_0 nutrition_btn" style="margin-left: 24px;">
-                        </div>
-                        <!-- 碳水 (g) -->
-                        <div class="d-flex align-items-center">
-                            <span class="d-flex justify-content-start align-items-center font_120_60_24">碳水 (g)</span>
-                            <input type="text" id="carbon2" name="carbon2" class="pad_0 nutrition_input" style="margin-left: 24px;">
-                        </div>
-                        <!-- 脂肪 (g) -->
-                        <div class="d-flex align-items-center">
-                            <span class="d-flex justify-content-start align-items-center font_120_60_24">脂肪 (g)</span>
-                            <input type="text" id="fat2" name="fat2" class="pad_0 nutrition_input" style="margin-left: 24px;">
-                        </div>
-                        <!-- 蛋白質 (g) -->
-                        <div class="d-flex align-items-center">
-                            <span class="d-flex justify-content-start align-items-center font_120_60_24">蛋白質 (g)</span>
-                            <input type="text" id="protein2" name="protein2" class="pad_0 nutrition_input" style="margin-left: 24px;">
-                        </div>
-                    </form>
+                <!-- 碳水 (g) -->
+                <div class="d-flex align-items-center">
+                    <span class="d-flex justify-content-start align-items-center font_120_60_24">碳水 (g)</span>
+                    <input type="text" id="carbohydrate_myFoodList" name="carbohydrate_myFoodList" v-bind:value="(carbohydrate_myFoodList).toFixed(2)" class="pad_0 nutrition_input" style="margin-left: 24px; text-align: center;" disabled>
+                    <input type="button" value="修改" data-bs-toggle="modal" data-bs-target="#Modal_updateFood" class="pad_0 nutrition_btn" style="margin-left: 24px;">
                 </div>
-            </div>
+                <!-- 脂肪 (g) -->
+                <div class="d-flex align-items-center">
+                    <span class="d-flex justify-content-start align-items-center font_120_60_24">脂肪 (g)</span>
+                    <input type="text" id="fat_myFoodList" name="fat_myFoodList" v-bind:value="(fat_myFoodList).toFixed(2)" class="pad_0 nutrition_input" style="margin-left: 24px; text-align: center;" disabled>
+                    <input type="button" value="刪除" @click="deleteFood(id_myFoodList)" class="pad_0 nutrition_btn" style="margin-left: 24px;">
+                </div>
+                <!-- 蛋白質 (g) -->
+                <div class="d-flex align-items-center">
+                    <span class="d-flex justify-content-start align-items-center font_120_60_24">蛋白質 (g)</span>
+                    <input type="text" id="protein_myFoodList" name="protein_myFoodList" v-bind:value="(protein_myFoodList).toFixed(2)" class="pad_0 nutrition_input" style="margin-left: 24px; text-align: center;" disabled>
+                </div>
+            </form>
         </div>
-
-        <!-- footer -->
-        <footer class="row justify-content-center" style="margin: 30px 0px 0px 0px;">
-            <div class="pad_0 footer_backgroung">
-                <span class="d-flex footer_font_306_60_32" style="margin: 20px 0px 0px 72px;">Dietary Assistant</span>
-                <span class="d-flex footer_font_86_40_20" style="margin: 0px 0px 0px 127px;">About</span>
-                <span class="d-flex footer_font_86_40_20" style="margin: 0px 0px 0px 127px;">Blog</span>
-                <span class="d-flex footer_font_196_40_20" style="margin: 0px 0px 0px 127px;">Privacy Policy</span>
-            </div>
-        </footer>
     </div>
-</body>
-</html>
+
+    <!-- 食品資料庫 -->
+    <div class="col-6 pad_0 food_database">
+        <div style="margin: 0px 0px 0px 100px;">
+            <span class="d-flex align-items-center font_196_60_24">食品資料庫</span>
+            <!-- 食品搜尋 -->
+            <form class="d-flex align-items-center search_myFood_form">
+                <input type="text" id="search_Edamam" name="search_Edamam" v-model="search_Edamam" class="pad_0 search_myFood_input">
+                <!-- 搜尋按紐 -->
+                <input type="button" @click="myFoodList_search_Edamam()" class="bor_pad_0 search_myFood_btn" style="margin: 10px 10px 10px 10px;">
+            </form>
+            <span class="d-flex align-items-center font_196_60_24">食品列表</span>
+            <!-- 食品列表選單 -->
+            <div class="scrollable_window food_list">
+                <span v-for="myFood_Edamam in myFoods_Edamam" @click="chooseFood_Edamam(myFood_Edamam)" class="d-flex align-items-center food_list_item clickToChangeColor_Edamam lightColor-background_Edamam" style="margin-bottom: 3px; padding-left: 10px;">{{ myFood_Edamam.foodname }} , {{ myFood_Edamam.portionsize }} g</span>
+            </div>
+            <!-- 三大營養素 -->
+            <span class="d-flex align-items-center font_196_60_24">三大營養素</span>
+            <form action="...">
+                <!-- 熱量 (kcal) -->
+                <div class="d-flex align-items-center">
+                    <span class="d-flex justify-content-start align-items-center font_120_60_24">熱量 (kcal)</span>
+                    <input type="text" id="calories_Edamam" name="calories_Edamam" v-bind:value="(calories_myFoodList_Edamam).toFixed(2)" class="pad_0 nutrition_input" style="margin-left: 24px; text-align: center;" disabled>
+                    <input type="button" value="加入日記" onclick="init_addDietDiaryFromMyFood_Edamam()" data-bs-toggle="modal" data-bs-target="#Modal_addFood_Edamam"  class="pad_0 nutrition_btn" style="margin-left: 24px;">
+                </div>
+                <!-- 碳水 (g) -->
+                <div class="d-flex align-items-center">
+                    <span class="d-flex justify-content-start align-items-center font_120_60_24">碳水 (g)</span>
+                    <input type="text" id="carbohydrate_Edamam" name="carbohydrate_Edamam" v-bind:value="(carbohydrate_myFoodList_Edamam).toFixed(2)" class="pad_0 nutrition_input" style="margin-left: 24px; text-align: center;" disabled>
+                </div>
+                <!-- 脂肪 (g) -->
+                <div class="d-flex align-items-center">
+                    <span class="d-flex justify-content-start align-items-center font_120_60_24">脂肪 (g)</span>
+                    <input type="text" id="fat_Edamam" name="fat_Edamam" v-bind:value="(fat_myFoodList_Edamam).toFixed(2)" class="pad_0 nutrition_input" style="margin-left: 24px; text-align: center;" disabled>
+                </div>
+                <!-- 蛋白質 (g) -->
+                <div class="d-flex align-items-center">
+                    <span class="d-flex justify-content-start align-items-center font_120_60_24">蛋白質 (g)</span>
+                    <input type="text" id="protein_Edamam" name="protein_Edamam" v-bind:value="(protein_myFoodList_Edamam).toFixed(2)" class="pad_0 nutrition_input" style="margin-left: 24px; text-align: center;" disabled>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- Modal_addFood -->
+    <div class="modal fade" id="Modal_addFood" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">新增飲食紀錄</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form class="row pad_0">
+                        <!-- 日期 -->
+                        <div class="col d-flex justify-content-center pad_0" style="margin-bottom: 20px;">
+                            <span class="d-flex justify-content-start align-items-center font_form_addDietDiary"
+                                  style="margin: 0px 0px 0px 0px;">日期：</span>
+                            <!-- 日期選擇器 -->
+                            <div class="datepicker_style_addDietDiary">
+                                <!-- 創建一個輸入框作為日期選擇器觸發器 -->
+                                <input type="text" id="datepicker_addDietDiary_myFood" class="form-control datepicker_input_style_addDietDiary" style="width: 200px;" readonly>
+                            </div>
+                        </div>
+                        <!-- 食品名稱 -->
+                        <div class="col d-flex justify-content-center pad_0" style="margin-bottom: 20px;">
+                            <span class="d-flex justify-content-start align-items-center font_form_addDietDiary" style="margin: 0px 0px 0px 0px;">食品名稱：</span>
+                            <input type="text" id="foodName_myFood" name="foodName_myFood" v-bind:value="foodName_myFoodList" class="input_box_form_addDietDiary" disabled>
+                        </div>
+                        <!-- 熱量(kcal) -->
+                        <div class="col d-flex justify-content-center pad_0" style="margin-bottom: 20px;">
+                            <span class="d-flex justify-content-start align-items-center font_form_addDietDiary" style="margin: 0px 0px 0px 0px;">熱量(kcal)：</span>
+                            <input type="number" step="any" id="calories_myFood" name="calories_myFood" v-bind:value="(calories_myFoodList * portionSize_DietDiary_myFoodList).toFixed(2)" class="input_box_form_addDietDiary" disabled>
+                        </div>
+                        <!-- 碳水(g) -->
+                        <div class="col d-flex justify-content-center pad_0" style="margin-bottom: 20px;">
+                            <span class="d-flex justify-content-start align-items-center font_form_addDietDiary" style="margin: 0px 0px 0px 0px;">碳水(g)：</span>
+                            <input type="number" step="any" id="carbohydrate_myFood" name="carbohydrate_myFood" v-bind:value="(carbohydrate_myFoodList * portionSize_DietDiary_myFoodList).toFixed(2)" class="input_box_form_addDietDiary" disabled>
+                        </div>
+                        <!-- 脂肪(g) -->
+                        <div class="col d-flex justify-content-center pad_0" style="margin-bottom: 20px;">
+                            <span class="d-flex justify-content-start align-items-center font_form_addDietDiary" style="margin: 0px 0px 0px 0px;">脂肪(g)：</span>
+                            <input type="number" step="any" id="fat_myFood" name="fat_myFood" v-bind:value="(fat_myFoodList * portionSize_DietDiary_myFoodList).toFixed(2)" class="input_box_form_addDietDiary" disabled>
+                        </div>
+                        <!-- 蛋白質(g) -->
+                        <div class="col d-flex justify-content-center pad_0" style="margin-bottom: 20px;">
+                            <span class="d-flex justify-content-start align-items-center font_form_addDietDiary" style="margin: 0px 0px 0px 0px;">蛋白質(g)：</span>
+                            <input type="number" step="any" id="protein_myFood" name="protein_myFood" v-bind:value="(protein_myFoodList * portionSize_DietDiary_myFoodList).toFixed(2)" class="input_box_form_addDietDiary" disabled>
+                        </div>
+                        <!-- 每份量(g) -->
+                        <div class="col d-flex justify-content-center pad_0" style="margin-bottom: 20px;">
+                            <span class="d-flex justify-content-start align-items-center font_form_addDietDiary" style="margin: 0px 0px 0px 0px;">每份量(g)：</span>
+                            <input type="number" step="1" id="portionSize_Food_myFood" name="portionSize_Food_myFood" v-bind:value="portionsize_myFoodList" class="input_box_form_addDietDiary" disabled>
+                        </div>
+                        <!-- 份數 -->
+                        <div class="col d-flex justify-content-center pad_0" style="margin-bottom: 20px;">
+                            <span class="d-flex justify-content-start align-items-center font_form_addDietDiary" style="margin: 0px 0px 0px 0px;">份數：</span>
+                            <input type="number" step="1" id="portionSize_DietDiary_myFood" name="portionSize_DietDiary_myFood" v-model="portionSize_DietDiary_myFoodList" class="input_box_form_addDietDiary">
+                        </div>
+                        <!-- 三餐 -->
+                        <div class="col d-flex justify-content-center pad_0" style="margin-bottom: 20px;">
+                            <span class="d-flex justify-content-start align-items-center font_form_addDietDiary" style="margin: 0px 0px 0px 0px;">餐飲：</span>
+                            <!-- 下拉式選單 -->
+                            <div class="dropdown pad_0" style="width: 200px;">
+                                <button id="dropdownMenuButton_myFood" class="btn btn-secondary dropdown-toggle" style="width: 100px; background: #247AA0;" type="button" data-bs-toggle="dropdown" aria-expanded="false"></button>
+                                <ul id="dropdown-menu_myFood" class="dropdown-menu" aria-labelledby="dropdownMenuButton_myFood" style="width: 100px;">
+                                    <li><p class="dropdown-item">早餐</p></li>
+                                    <li><p class="dropdown-item">午餐</p></li>
+                                    <li><p class="dropdown-item">晚餐</p></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">關閉</button>
+                    <button type="button" onclick="indexNamespace.addDietDiaryFromMyFood()" class="btn btn-primary" data-bs-dismiss="modal">確認</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal_addFood_Edamam -->
+    <div class="modal fade" id="Modal_addFood_Edamam" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">新增飲食紀錄</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form class="row pad_0">
+                        <!-- 日期 -->
+                        <div class="col d-flex justify-content-center pad_0" style="margin-bottom: 20px;">
+                            <span class="d-flex justify-content-start align-items-center font_form_addDietDiary" style="margin: 0px 0px 0px 0px;">日期：</span>
+                            <!-- 日期選擇器 -->
+                            <div class="datepicker_style_addDietDiary">
+                                <!-- 創建一個輸入框作為日期選擇器觸發器 -->
+                                <input type="text" id="datepicker_addDietDiary_myFood_Edamam" class="form-control datepicker_input_style_addDietDiary" style="width: 200px;" readonly>
+                            </div>
+                        </div>
+                        <!-- 食品名稱 -->
+                        <div class="col d-flex justify-content-center pad_0" style="margin-bottom: 20px;">
+                            <span class="d-flex justify-content-start align-items-center font_form_addDietDiary" style="margin: 0px 0px 0px 0px;">食品名稱：</span>
+                            <input type="text" id="foodName_myFood_Edamam" name="foodName_myFood_Edamam" v-bind:value="foodName_myFoodList_Edamam" class="input_box_form_addDietDiary" disabled>
+                        </div>
+                        <!-- 熱量(kcal) -->
+                        <div class="col d-flex justify-content-center pad_0" style="margin-bottom: 20px;">
+                            <span class="d-flex justify-content-start align-items-center font_form_addDietDiary" style="margin: 0px 0px 0px 0px;">熱量(kcal)：</span>
+                            <input type="number" step="any" id="calories_myFood_Edamam" name="calories_myFood_Edamam" v-bind:value="(calories_myFoodList_Edamam * portionSize_DietDiary_myFoodList_Edamam).toFixed(2)" class="input_box_form_addDietDiary" disabled>
+                        </div>
+                        <!-- 碳水(g) -->
+                        <div class="col d-flex justify-content-center pad_0" style="margin-bottom: 20px;">
+                            <span class="d-flex justify-content-start align-items-center font_form_addDietDiary" style="margin: 0px 0px 0px 0px;">碳水(g)：</span>
+                            <input type="number" step="any" id="carbohydrate_myFood_Edamam" name="carbohydrate_myFood_Edamam" v-bind:value="(carbohydrate_myFoodList_Edamam * portionSize_DietDiary_myFoodList_Edamam).toFixed(2)" class="input_box_form_addDietDiary" disabled>
+                        </div>
+                        <!-- 脂肪(g) -->
+                        <div class="col d-flex justify-content-center pad_0" style="margin-bottom: 20px;">
+                            <span class="d-flex justify-content-start align-items-center font_form_addDietDiary" style="margin: 0px 0px 0px 0px;">脂肪(g)：</span>
+                            <input type="number" step="any" id="fat_myFood_Edamam" name="fat_myFood_Edamam" v-bind:value="(fat_myFoodList_Edamam * portionSize_DietDiary_myFoodList_Edamam).toFixed(2)" class="input_box_form_addDietDiary" disabled>
+                        </div>
+                        <!-- 蛋白質(g) -->
+                        <div class="col d-flex justify-content-center pad_0" style="margin-bottom: 20px;">
+                            <span class="d-flex justify-content-start align-items-center font_form_addDietDiary" style="margin: 0px 0px 0px 0px;">蛋白質(g)：</span>
+                            <input type="number" step="any" id="protein_myFood_Edamam" name="protein_myFood_Edamam" v-bind:value="(protein_myFoodList_Edamam * portionSize_DietDiary_myFoodList_Edamam).toFixed(2)" class="input_box_form_addDietDiary" disabled>
+                        </div>
+                        <!-- 每份量(g) -->
+                        <div class="col d-flex justify-content-center pad_0" style="margin-bottom: 20px;">
+                            <span class="d-flex justify-content-start align-items-center font_form_addDietDiary" style="margin: 0px 0px 0px 0px;">每份量(g)：</span>
+                            <input type="number" step="1" id="portionSize_Food_myFood_Edamam" name="portionSize_Food_myFood_Edamam" v-bind:value="portionsize_myFoodList_Edamam" class="input_box_form_addDietDiary" disabled>
+                        </div>
+                        <!-- 份數 -->
+                        <div class="col d-flex justify-content-center pad_0" style="margin-bottom: 20px;">
+                            <span class="d-flex justify-content-start align-items-center font_form_addDietDiary" style="margin: 0px 0px 0px 0px;">份數：</span>
+                            <input type="number" step="1" id="portionSize_DietDiary_myFood_Edamam" name="portionSize_DietDiary_myFood_Edamam" v-model="portionSize_DietDiary_myFoodList_Edamam" class="input_box_form_addDietDiary">
+                        </div>
+                        <!-- 三餐 -->
+                        <div class="col d-flex justify-content-center pad_0" style="margin-bottom: 20px;">
+                            <span class="d-flex justify-content-start align-items-center font_form_addDietDiary" style="margin: 0px 0px 0px 0px;">餐飲：</span>
+                            <!-- 下拉式選單 - 排序 -->
+                            <div class="dropdown pad_0" style="width: 200px;">
+                                <button id="dropdownMenuButton_myFood_Edamam" class="btn btn-secondary dropdown-toggle" style="width: 100px; background: #247AA0;" type="button" data-bs-toggle="dropdown" aria-expanded="false"></button>
+                                <ul id="dropdown-menu_myFood_Edamam" class="dropdown-menu" aria-labelledby="dropdownMenuButton_myFood_Edamam" style="width: 100px;">
+                                    <li><p class="dropdown-item">早餐</p></li>
+                                    <li><p class="dropdown-item">午餐</p></li>
+                                    <li><p class="dropdown-item">晚餐</p></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">關閉</button>
+                    <button type="button" onclick="indexNamespace.addDietDiaryFromMyFood_Edamam()" class="btn btn-primary" data-bs-dismiss="modal">確認</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal_updateFood -->
+    <div class="modal fade" id="Modal_updateFood" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">更新食品</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form class="row pad_0">
+                        <!-- id -->
+                        <input type="hidden" id="update_id_myFood" name="update_id_myFood" v-bind:value="id_myFoodList">
+                        <!-- 食品名稱 -->
+                        <div class="col d-flex justify-content-center pad_0" style="margin-bottom: 20px;">
+                            <span class="d-flex justify-content-start align-items-center font_form_addDietDiary"
+                                  style="margin: 0px 0px 0px 0px;">食品名稱：</span>
+                            <input type="text" id="update_foodName_myFood" name="update_foodName_myFood" v-bind:value="foodName_myFoodList" class="input_box_form_addDietDiary">
+                        </div>
+                        <!-- 熱量(kcal) -->
+                        <div class="col d-flex justify-content-center pad_0" style="margin-bottom: 20px;">
+                            <span class="d-flex justify-content-start align-items-center font_form_addDietDiary"
+                                  style="margin: 0px 0px 0px 0px;">熱量(kcal)：</span>
+                            <input type="number" step="any" id="update_calories_myFood" name="update_calories_myFood" v-bind:value="(calories_myFoodList * portionSize_DietDiary_myFoodList).toFixed(2)" class="input_box_form_addDietDiary">
+                        </div>
+                        <!-- 碳水(g) -->
+                        <div class="col d-flex justify-content-center pad_0" style="margin-bottom: 20px;">
+                            <span class="d-flex justify-content-start align-items-center font_form_addDietDiary"
+                                  style="margin: 0px 0px 0px 0px;">碳水(g)：</span>
+                            <input type="number" step="any" id="update_carbohydrate_myFood" name="update_carbohydrate_myFood" v-bind:value="(carbohydrate_myFoodList * portionSize_DietDiary_myFoodList).toFixed(2)" class="input_box_form_addDietDiary">
+                        </div>
+                        <!-- 脂肪(g) -->
+                        <div class="col d-flex justify-content-center pad_0" style="margin-bottom: 20px;">
+                            <span class="d-flex justify-content-start align-items-center font_form_addDietDiary"
+                                  style="margin: 0px 0px 0px 0px;">脂肪(g)：</span>
+                            <input type="number" step="any" id="update_fat_myFood" name="update_fat_myFood" v-bind:value="(fat_myFoodList * portionSize_DietDiary_myFoodList).toFixed(2)" class="input_box_form_addDietDiary">
+                        </div>
+                        <!-- 蛋白質(g) -->
+                        <div class="col d-flex justify-content-center pad_0" style="margin-bottom: 20px;">
+                            <span class="d-flex justify-content-start align-items-center font_form_addDietDiary"
+                                  style="margin: 0px 0px 0px 0px;">蛋白質(g)：</span>
+                            <input type="number" step="any" id="update_protein_myFood" name="update_protein_myFood" v-bind:value="(protein_myFoodList * portionSize_DietDiary_myFoodList).toFixed(2)" class="input_box_form_addDietDiary">
+                        </div>
+                        <!-- 每份量(g) -->
+                        <div class="col d-flex justify-content-center pad_0" style="margin-bottom: 20px;">
+                            <span class="d-flex justify-content-start align-items-center font_form_addDietDiary"
+                                  style="margin: 0px 0px 0px 0px;">每份量(g)：</span>
+                            <input type="number" step="1" id="update_portionSize_Food_myFood" name="update_portionSize_Food_myFood" v-bind:value="portionsize_myFoodList" class="input_box_form_addDietDiary">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">關閉</button>
+                    <button type="button" onclick="indexNamespace.update_MyFood()" class="btn btn-primary" data-bs-dismiss="modal">確認</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

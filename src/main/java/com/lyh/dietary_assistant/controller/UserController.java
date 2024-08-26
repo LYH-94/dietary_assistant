@@ -9,6 +9,9 @@ import java.io.IOException;
 import java.util.Map;
 
 public interface UserController {
+    // 請求 URL "/" - 返回 index.html
+    public ResponseEntity<byte[]> indexPage() throws IOException;
+
     // 登入用戶，
     public ResponseEntity<byte[]> login(HttpServletRequest req, Map<String, String> allParams) throws IOException;
 

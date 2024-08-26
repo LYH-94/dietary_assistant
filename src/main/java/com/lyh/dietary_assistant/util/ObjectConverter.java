@@ -28,9 +28,6 @@ public class ObjectConverter {
         Date date = formatter.parse((String) jsonData.get("date"));
         dietDiary.setDate(date);
 
-        //String format = formatter.format(date);
-        //System.out.println(format);
-
         // Object => Map
         Food food = new Food();
         LinkedHashMap map_food = (LinkedHashMap) jsonData.get("food");
@@ -39,15 +36,42 @@ public class ObjectConverter {
         food.setFoodname((String) map_food.get("foodName"));
 
         // Object => Double => Float
-        Double calories = (Double) map_food.get("calories");
-        Double carbohydrate = (Double) map_food.get("carbohydrate");
-        Double fat = (Double) map_food.get("fat");
-        Double protein = (Double) map_food.get("protein");
-
-        food.setCalories(calories.floatValue());
-        food.setCarbohydrate(carbohydrate.floatValue());
-        food.setFat(fat.floatValue());
-        food.setProtein(protein.floatValue());
+        // calories
+        Object calories_object = map_food.get("calories");
+        if (calories_object instanceof Double) {
+            Double calories_Double = (Double) calories_object;
+            food.setCalories(calories_Double.floatValue());
+        } else if (calories_object instanceof Integer) {
+            Integer calories_Integer = (Integer) calories_object;
+            food.setCalories(calories_Integer.floatValue());
+        }
+        // carbohydrate
+        Object carbohydrate_object = map_food.get("carbohydrate");
+        if (carbohydrate_object instanceof Double) {
+            Double carbohydrate_Double = (Double) carbohydrate_object;
+            food.setCarbohydrate(carbohydrate_Double.floatValue());
+        } else if (carbohydrate_object instanceof Integer) {
+            Integer carbohydrate_Integer = (Integer) carbohydrate_object;
+            food.setCarbohydrate(carbohydrate_Integer.floatValue());
+        }
+        // fat
+        Object fat_object = map_food.get("fat");
+        if (fat_object instanceof Double) {
+            Double fat_Double = (Double) fat_object;
+            food.setFat(fat_Double.floatValue());
+        } else if (fat_object instanceof Integer) {
+            Integer fat_Integer = (Integer) fat_object;
+            food.setFat(fat_Integer.floatValue());
+        }
+        // protein
+        Object protein_object = map_food.get("protein");
+        if (protein_object instanceof Double) {
+            Double protein_Double = (Double) protein_object;
+            food.setProtein(protein_Double.floatValue());
+        } else if (protein_object instanceof Integer) {
+            Integer protein_Integer = (Integer) protein_object;
+            food.setProtein(protein_Integer.floatValue());
+        }
 
         // Object => Integer => Short
         Integer food_portionSize = (Integer) map_food.get("portionSize");

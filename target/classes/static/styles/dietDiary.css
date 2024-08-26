@@ -22,6 +22,14 @@
     border-radius: 5px;
 }
 
+.datepicker_style_addDietDiary {
+    width: 200px;
+    height: 45px;
+
+    background: #247AA0;
+    border-radius: 10px;
+}
+
 .datepicker_input_style {
 
     font-family: 'Inter';
@@ -31,6 +39,20 @@
 
     background: #247AA0;
     border-radius: 5px;
+    border: 2px solid #247AA0;
+
+    color: #FFFFFF;
+}
+
+.datepicker_input_style_addDietDiary {
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-size: 20px;
+    text-align: center;
+
+    background: #247AA0;
+    border-radius: 10px;
     border: 2px solid #247AA0;
 
     color: #FFFFFF;
@@ -76,6 +98,8 @@
 .remove_diet_btn {
     width: 20px;
     height: 20px;
+
+    cursor: pointer;
 }
 
 .font_86_60_24 {
@@ -136,4 +160,27 @@
     font-size: 20px;
 
     color: #000000;
+}
+
+.font_form_addDietDiary {
+    width: 130px;
+    height: 45px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+
+    color: #247AA0;
+}
+
+.input_box_form_addDietDiary {
+    width: 200px;
+    height: 45px;
+
+    text-align: center;
+
+    background: #FFFFFF;
+    border: 2px solid #AAC6D2;
+    border-radius: 10px;
 }

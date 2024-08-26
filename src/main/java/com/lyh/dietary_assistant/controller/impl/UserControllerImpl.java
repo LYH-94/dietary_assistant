@@ -31,6 +31,12 @@ public class UserControllerImpl implements UserController {
     }
 
     @Override
+    @RequestMapping(value = "/")
+    public ResponseEntity<byte[]> indexPage() throws IOException {
+        return responseHTML.getHTML("index", HttpStatus.OK);
+    }
+
+    @Override
     @RequestMapping(value = "/login")
     public ResponseEntity<byte[]> login(HttpServletRequest req, @RequestParam Map<String, String> allParams) throws IOException {
         return userService.login(req, allParams) ? responseHTML.getHTML("index", HttpStatus.OK) : responseHTML.getHTML("login", HttpStatus.UNAUTHORIZED);

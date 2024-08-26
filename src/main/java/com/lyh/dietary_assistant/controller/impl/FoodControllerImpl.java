@@ -55,15 +55,17 @@ public class FoodControllerImpl implements FoodController {
         return foodService.deleteMyFood(req, id);
     }
 
+    /*
     @Override
     @RequestMapping(value = "/myFood/{foodName}", method = RequestMethod.GET)
     @ResponseBody
     public List<Food> searchMyFood(HttpServletRequest req, @PathVariable(value = "foodName") String foodName) {
         return foodService.searchMyFood(req, foodName);
     }
+    */
 
     @Override
-    @RequestMapping(value = "/Edamam/{foodName}")
+    @RequestMapping(value = "/Edamam/{foodName}", method = RequestMethod.GET)
     @ResponseBody
     public List<Food> searchFoodFromEdamam(@PathVariable(value = "foodName") String foodName) throws JsonProcessingException {
         return foodService.searchFoodFromEdamam(foodName);

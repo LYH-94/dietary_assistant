@@ -12,6 +12,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.servlet.http.HttpServletRequest;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -25,14 +28,19 @@ public class DietDiaryServiceImpl implements DietDiaryService {
     private FoodMapper foodMapper;
 
     @Override
-    public List<DietDiary> getDietDiary(HttpServletRequest req, String date) {
+    public List<DietDiary> getDietDiary(HttpServletRequest req, String date) throws ParseException {
         // 獲取 session 中的用戶 id
         User user = (User) req.getSession().getAttribute("User");
         Integer id = user.getId();
 
+        // 將 Strgin 型態的 date 轉換成 Date 型態
+        // Object => String => Date
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+        Date formatter_date = formatter.parse(date);
+
         // 透過用戶 id 查詢飲食日記
         DietDiaryExample dietDiaryExample = new DietDiaryExample();
-        dietDiaryExample.createCriteria().andOwnerEqualTo(id);
+        dietDiaryExample.createCriteria().andOwnerEqualTo(id).andDateEqualTo(formatter_date);
         List<DietDiary> dietDiaries = dietDiaryMapper.selectByExample(dietDiaryExample);
 
         // 透過 dietDiaries 中 food 的 id 來查詢 Food
@@ -45,7 +53,7 @@ public class DietDiaryServiceImpl implements DietDiaryService {
     }
 
     @Override
-    public List<DietDiary> deleteDietDiary(HttpServletRequest req, Integer id, String date) {
+    public List<DietDiary> deleteDietDiary(HttpServletRequest req, Integer id, String date) throws ParseException {
         // 獲取 session 中的用戶 id
         User user = (User) req.getSession().getAttribute("User");
         Integer userId = user.getId();

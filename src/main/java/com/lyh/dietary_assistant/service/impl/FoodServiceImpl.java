@@ -99,14 +99,16 @@ public class FoodServiceImpl implements FoodService {
             Food myFood = dietDiary.getMyFood();
             foodMapper.insertSelective(new Food(null, userId, myFood.getFoodname(), myFood.getCalories(), myFood.getCarbohydrate(), myFood.getFat(), myFood.getProtein(), myFood.getPortionsize()));
 
-            // 重新查詢 Food 並更新 dietDiary。
-            foodExample.createCriteria().andFoodnameEqualTo(foodname);
-            List<Food> foods1 = foodMapper.selectByExample(foodExample);
-            dietDiary.setMyFood(foods1.get(0));
-            dietDiary.setFood(dietDiary.getMyFood().getId());
         }
 
+        // 查詢 Food 並更新 dietDiary。
+        foodExample.createCriteria().andFoodnameEqualTo(foodname);
+        List<Food> foods1 = foodMapper.selectByExample(foodExample);
+        dietDiary.setMyFood(foods1.get(0));
+        dietDiary.setFood(dietDiary.getMyFood().getId());
+
         // 添加至飲食日記。
+        dietDiary.setOwner(userId);
         dietDiaryMapper.insert(dietDiary);
     }
 
@@ -124,6 +126,7 @@ public class FoodServiceImpl implements FoodService {
         return getMyFood(req);
     }
 
+    /*
     @Override
     public List<Food> searchMyFood(HttpServletRequest req, String foodName) {
         // 獲取 session 中的用戶 id
@@ -137,6 +140,7 @@ public class FoodServiceImpl implements FoodService {
 
         return foods;
     }
+    */
 
     @Override
     public List<Food> searchFoodFromEdamam(String foodName) throws JsonProcessingException {

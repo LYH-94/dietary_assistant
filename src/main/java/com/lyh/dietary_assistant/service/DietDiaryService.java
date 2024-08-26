@@ -3,12 +3,13 @@ package com.lyh.dietary_assistant.service;
 import com.lyh.dietary_assistant.pojo.DietDiary;
 
 import javax.servlet.http.HttpServletRequest;
+import java.text.ParseException;
 import java.util.List;
 
 public interface DietDiaryService {
     // 查詢飲食日記頁需要的數據(查詢指定日期及前後三天的飲食紀錄)。
-    List<DietDiary> getDietDiary(HttpServletRequest req, String date);
+    List<DietDiary> getDietDiary(HttpServletRequest req, String date) throws ParseException;
 
     // 刪除指定 id 的飲食紀錄並返回指定日期及前後三天的飲食紀錄(刪除紀錄後的紀錄)
-    List<DietDiary> deleteDietDiary(HttpServletRequest req, Integer id, String date);
+    List<DietDiary> deleteDietDiary(HttpServletRequest req, Integer id, String date) throws ParseException;
 }

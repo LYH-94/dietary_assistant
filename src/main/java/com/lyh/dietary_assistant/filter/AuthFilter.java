@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @WebFilter(filterName = "AuthFilter", urlPatterns = {
+        "/",
         "/logout",
         "/page/index.html",
         "/index",
@@ -21,6 +22,7 @@ import java.io.IOException;
         "/page/myChart.html",
         "/myChart",
         "/myChart/*"})
+//@WebFilter(filterName = "AuthFilter", urlPatterns = {"/*"})
 public class AuthFilter implements Filter {
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
@@ -31,6 +33,17 @@ public class AuthFilter implements Filter {
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
         HttpServletRequest httpRequest = (HttpServletRequest) servletRequest;
         HttpServletResponse httpResponse = (HttpServletResponse) servletResponse;
+
+        // 排除不需要身分驗證的請求。
+        /*
+        String path = httpRequest.getRequestURI();
+        if (!(path.equals("/dietary_assistant/page/login.html")
+                || path.equals("/dietary_assistant/login")
+                || path.equals("/dietary_assistant/page/signup.html")
+                || path.equals("/dietary_assistant/signup"))) {
+
+        }
+        */
 
         // 獲取 session 中的用戶訊息。
         Object user = httpRequest.getSession().getAttribute("User");
