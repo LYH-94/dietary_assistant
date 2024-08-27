@@ -4,7 +4,6 @@ var myFoodNamespace = myFoodNamespace || {};
 let vue_myFood;
 
 myFoodNamespace.init = function(url_myFood) {
-    // 使用 AJAX 请求發送/獲取 JSON 数据
     fetch(url_myFood)
     .then(response => response.json())
     .then(data => {
@@ -38,10 +37,10 @@ indexNamespace.init_addDietDiaryForm = function(threeMeals){
         indexNamespace.count = true;
     }else{
         $('#datepicker_addDietDiary_myFood').datepicker({
-            language: 'zh-TW',  // 設置語言為繁體中文
-            format: 'yyyy/mm/dd',  // 設置日期格式
-            autoclose: true,  // 選擇日期後自動關閉日曆
-            todayHighlight: true,  // 突出顯示今天的日期
+            language: 'zh-TW', // 設置語言為繁體中文
+            format: 'yyyy/mm/dd', // 設置日期格式
+            autoclose: true, // 選擇日期後自動關閉日曆
+            todayHighlight: true, // 突出顯示今天的日期
             calendarWeeks: true, // 在周行左側顯示週數
             todayBtn: 'linked', // 切換到今天
         }).datepicker('setDate', global_date);
@@ -52,10 +51,10 @@ indexNamespace.init_addDietDiaryForm = function(threeMeals){
 indexNamespace.init_datepicker_addDietDiary = function(){
     // 初始化日期選擇器
     $('#datepicker_addDietDiary_myFood').datepicker({
-        language: 'zh-TW',  // 設置語言為繁體中文
-        format: 'yyyy/mm/dd',  // 設置日期格式
-        autoclose: true,  // 選擇日期後自動關閉日曆
-        todayHighlight: true,  // 突出顯示今天的日期
+        language: 'zh-TW', // 設置語言為繁體中文
+        format: 'yyyy/mm/dd', // 設置日期格式
+        autoclose: true, // 選擇日期後自動關閉日曆
+        todayHighlight: true, // 突出顯示今天的日期
         calendarWeeks: true, // 在周行左側顯示週數
         todayBtn: 'linked', // 切換到今天
     })
@@ -177,9 +176,9 @@ indexNamespace.update_MyFood = function(){
     fetch(url_myFood, {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/x-www-form-urlencoded'  // 設置正確的 Content-Type
+            'Content-Type': 'application/x-www-form-urlencoded' // 設置正確的 Content-Type
         },
-        body: formData.toString()  // 將 URLSearchParams 轉換為字串
+        body: formData.toString() // 將 URLSearchParams 轉換為字串
     })
     .then(response => response.json())
     .then(data => {
@@ -199,10 +198,10 @@ indexNamespace.init_addDietDiaryForm_Edamam = function(threeMeals){
         indexNamespace.count2 = true;
     }else{
         $('#datepicker_addDietDiary_myFood_Edamam').datepicker({
-            language: 'zh-TW',  // 設置語言為繁體中文
-            format: 'yyyy/mm/dd',  // 設置日期格式
-            autoclose: true,  // 選擇日期後自動關閉日曆
-            todayHighlight: true,  // 突出顯示今天的日期
+            language: 'zh-TW', // 設置語言為繁體中文
+            format: 'yyyy/mm/dd', // 設置日期格式
+            autoclose: true, // 選擇日期後自動關閉日曆
+            todayHighlight: true, // 突出顯示今天的日期
             calendarWeeks: true, // 在周行左側顯示週數
             todayBtn: 'linked', // 切換到今天
         }).datepicker('setDate', global_date);
@@ -213,10 +212,10 @@ indexNamespace.init_addDietDiaryForm_Edamam = function(threeMeals){
 indexNamespace.init_datepicker_addDietDiary_Edamam = function(){
     // 初始化日期選擇器
     $('#datepicker_addDietDiary_myFood_Edamam').datepicker({
-        language: 'zh-TW',  // 設置語言為繁體中文
-        format: 'yyyy/mm/dd',  // 設置日期格式
-        autoclose: true,  // 選擇日期後自動關閉日曆
-        todayHighlight: true,  // 突出顯示今天的日期
+        language: 'zh-TW', // 設置語言為繁體中文
+        format: 'yyyy/mm/dd', // 設置日期格式
+        autoclose: true, // 選擇日期後自動關閉日曆
+        todayHighlight: true, // 突出顯示今天的日期
         calendarWeeks: true, // 在周行左側顯示週數
         todayBtn: 'linked', // 切換到今天
     })
@@ -438,9 +437,9 @@ myFoodNamespace.createMyApp = function(data) {
                     fetch(url_myFood_foodId, {
                         method: 'POST',
                         headers: {
-                            'Content-Type': 'application/x-www-form-urlencoded'  // 設置正確的 Content-Type
+                            'Content-Type': 'application/x-www-form-urlencoded'
                         },
-                        body: formData.toString()  // 將 URLSearchParams 轉換為字串
+                        body: formData.toString() // 將 URLSearchParams 轉換為字串
                     })
                     .then(response => response.json())
                     .then(data => {

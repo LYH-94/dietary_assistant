@@ -8,7 +8,6 @@ let global_date;
 dietDiaryNamespace.init = function(url_dietDiary, nowDate) {
     let url_dietDiary_date = `${url_dietDiary}/${nowDate}`;
 
-    // 使用 AJAX 请求發送/獲取 JSON 数据
     fetch(url_dietDiary_date)
     .then(response => response.json())
     .then(data => {
@@ -25,10 +24,10 @@ function init_datepicker(){
 
     // 初始化日期選擇器
     $('#datepicker').datepicker({
-        language: 'zh-TW',  // 設置語言為繁體中文
-        format: 'yyyy/mm/dd',  // 設置日期格式
-        autoclose: true,  // 選擇日期後自動關閉日曆
-        todayHighlight: true,  // 突出顯示今天的日期
+        language: 'zh-TW', // 設置語言為繁體中文
+        format: 'yyyy/mm/dd', // 設置日期格式
+        autoclose: true, // 選擇日期後自動關閉日曆
+        todayHighlight: true, // 突出顯示今天的日期
         calendarWeeks: true, // 在周行左側顯示週數
         todayBtn: 'linked', // 切換到今天
     })
@@ -37,8 +36,8 @@ function init_datepicker(){
     // 當日期更改時觸發
     .on('changeDate', function(e) {
         const year = e.date.getFullYear();
-        const month = String(e.date.getMonth() + 1).padStart(2, '0');  // 月份從 0 開始，所以需要 +1
-        const day = String(e.date.getDate()).padStart(2, '0');  // 確保日期為兩位數
+        const month = String(e.date.getMonth() + 1).padStart(2, '0'); // 月份從 0 開始，所以需要 +1
+        const day = String(e.date.getDate()).padStart(2, '0'); // 確保日期為兩位數
 
         let formattedDate = `${year}-${month}-${day}`;
         global_date = formattedDate;
@@ -60,10 +59,10 @@ dietDiaryNamespace.init_addDietDiaryForm = function(threeMeals){
         dietDiaryNamespace.count = true;
     }else{
         $('#datepicker_addDietDiary').datepicker({
-            language: 'zh-TW',  // 設置語言為繁體中文
-            format: 'yyyy/mm/dd',  // 設置日期格式
-            autoclose: true,  // 選擇日期後自動關閉日曆
-            todayHighlight: true,  // 突出顯示今天的日期
+            language: 'zh-TW', // 設置語言為繁體中文
+            format: 'yyyy/mm/dd', // 設置日期格式
+            autoclose: true, // 選擇日期後自動關閉日曆
+            todayHighlight: true, // 突出顯示今天的日期
             calendarWeeks: true, // 在周行左側顯示週數
             todayBtn: 'linked', // 切換到今天
         }).datepicker('setDate', global_date);
@@ -74,10 +73,10 @@ dietDiaryNamespace.init_addDietDiaryForm = function(threeMeals){
 dietDiaryNamespace.init_datepicker_addDietDiary = function(){
     // 初始化日期選擇器
     $('#datepicker_addDietDiary').datepicker({
-        language: 'zh-TW',  // 設置語言為繁體中文
-        format: 'yyyy/mm/dd',  // 設置日期格式
-        autoclose: true,  // 選擇日期後自動關閉日曆
-        todayHighlight: true,  // 突出顯示今天的日期
+        language: 'zh-TW', // 設置語言為繁體中文
+        format: 'yyyy/mm/dd', // 設置日期格式
+        autoclose: true, // 選擇日期後自動關閉日曆
+        todayHighlight: true, // 突出顯示今天的日期
         calendarWeeks: true, // 在周行左側顯示週數
         todayBtn: 'linked', // 切換到今天
     })
@@ -99,8 +98,8 @@ dietDiaryNamespace.getNowDate = function() {
     const date = new Date();
 
     const year = date.getFullYear();
-    const month = String(date.getMonth() + 1).padStart(2, '0');  // 月份從 0 開始，所以需要 +1
-    const day = String(date.getDate()).padStart(2, '0');  // 確保日期為兩位數
+    const month = String(date.getMonth() + 1).padStart(2, '0'); // 月份從 0 開始，所以需要 +1
+    const day = String(date.getDate()).padStart(2, '0'); // 確保日期為兩位數
 
     const formattedDate = `${year}-${month}-${day}`;
     return formattedDate
@@ -331,9 +330,9 @@ dietDiaryNamespace.createMyApp = function(data) {
                 let response = await fetch(url_dietDiary_id_date, {
                     method: 'POST', // 設置 HTTP 方法為 POST
                     headers: {
-                        'Content-Type': 'application/x-www-form-urlencoded'  // 設置正確的 Content-Type
+                        'Content-Type': 'application/x-www-form-urlencoded'
                     },
-                    body: formData.toString()  // 將 URLSearchParams 轉換為字串
+                    body: formData.toString() // 將 URLSearchParams 轉換為字串
                 });
                 let data = await response.json();
 

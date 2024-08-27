@@ -5,61 +5,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7a749b76-b525-4440-8212-867c815d75bc" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/scripts/common.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/scripts/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/scripts/myChart.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/scripts/myFood.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/scripts/userInfo.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lyh/dietary_assistant/controller/DietDiaryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lyh/dietary_assistant/controller/DietDiaryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lyh/dietary_assistant/controller/FoodController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lyh/dietary_assistant/controller/FoodController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lyh/dietary_assistant/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lyh/dietary_assistant/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lyh/dietary_assistant/controller/impl/DietDiaryControllerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lyh/dietary_assistant/controller/impl/DietDiaryControllerImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lyh/dietary_assistant/controller/impl/FoodControllerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lyh/dietary_assistant/controller/impl/FoodControllerImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lyh/dietary_assistant/controller/impl/UserControllerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lyh/dietary_assistant/controller/impl/UserControllerImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lyh/dietary_assistant/filter/AuthFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lyh/dietary_assistant/filter/AuthFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lyh/dietary_assistant/service/DietDiaryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lyh/dietary_assistant/service/DietDiaryService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lyh/dietary_assistant/service/FoodService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lyh/dietary_assistant/service/FoodService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lyh/dietary_assistant/service/impl/DietDiaryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lyh/dietary_assistant/service/impl/DietDiaryServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/lyh/dietary_assistant/service/impl/FoodServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lyh/dietary_assistant/service/impl/FoodServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lyh/dietary_assistant/util/ObjectConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lyh/dietary_assistant/util/ObjectConverter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/pages/dietDiary.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/pages/dietDiary.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/pages/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/pages/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/pages/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/pages/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/pages/myChart.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/pages/myChart.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/pages/myFood.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/pages/myFood.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/pages/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/pages/signup.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/pages/userInfo.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/pages/userInfo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/scripts/chartJS.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/scripts/dietDiary.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/scripts/dietDiary.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/styles/common.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/styles/common.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/styles/dietDiary.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/styles/dietDiary.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/styles/myChart.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/styles/myChart.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/styles/myFood.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/styles/myFood.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lyh/dietary_assistant/controller/DietDiaryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lyh/dietary_assistant/controller/DietDiaryController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lyh/dietary_assistant/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lyh/dietary_assistant/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lyh/dietary_assistant/controller/impl/DietDiaryControllerImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lyh/dietary_assistant/controller/impl/DietDiaryControllerImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lyh/dietary_assistant/controller/impl/UserControllerImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lyh/dietary_assistant/controller/impl/UserControllerImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lyh/dietary_assistant/filter/AuthFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lyh/dietary_assistant/filter/AuthFilter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lyh/dietary_assistant/pojo/Food.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lyh/dietary_assistant/pojo/Food.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lyh/dietary_assistant/pojo/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lyh/dietary_assistant/pojo/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lyh/dietary_assistant/pojo/UserInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lyh/dietary_assistant/pojo/UserInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lyh/dietary_assistant/service/DietDiaryService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lyh/dietary_assistant/service/DietDiaryService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lyh/dietary_assistant/service/impl/DietDiaryServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lyh/dietary_assistant/service/impl/DietDiaryServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/scripts/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/scripts/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/scripts/myChart.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/scripts/myChart.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/scripts/myFood.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/scripts/myFood.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/scripts/userInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/scripts/userInfo.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/lyh/dietary_assistant/service/impl/FoodServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lyh/dietary_assistant/service/impl/FoodServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lyh/dietary_assistant/util/ObjectConverter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lyh/dietary_assistant/util/ObjectConverter.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/static/pages/dietDiary.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/pages/dietDiary.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/static/pages/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/pages/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/static/pages/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/pages/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/pages/myChart.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/pages/myChart.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/static/pages/myFood.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/pages/myFood.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/static/pages/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/pages/signup.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/static/pages/userInfo.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/pages/userInfo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/scripts/chartJS.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/static/scripts/dietDiary.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/scripts/dietDiary.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/styles/common.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/styles/common.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/styles/dietDiary.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/styles/dietDiary.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/styles/myFood.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/styles/myFood.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/scripts/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/scripts/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/scripts/myChart.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/scripts/myChart.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/scripts/myFood.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/scripts/myFood.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/scripts/userInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/scripts/userInfo.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

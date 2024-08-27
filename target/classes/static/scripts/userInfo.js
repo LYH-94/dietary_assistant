@@ -4,16 +4,11 @@ var userInfoNamespace = userInfoNamespace || {};
 let vue_userInfo;
 
 userInfoNamespace.init = function(url_userInfo) {
-    // 使用 AJAX 请求發送/獲取 JSON 数据
     fetch(url_userInfo)
     .then(response => response.json())
     .then(data => {
         userInfoNamespace.createMyApp(data);
         vue_userInfo.mount('#vue_userInfo');
-
-        // 在外部 javascript 調用 Vue3 組件內部函式的方法。關鍵在於使用掛載後的物件實例來調用即可，其他一樣。
-        //let vm = vue_userInfo.mount('#vue_userInfo');
-        //vm.test();
     });
 }
 
@@ -45,9 +40,9 @@ userInfoNamespace.createMyApp = function(user) {
                     fetch(url_userInfo, {
                         method: 'POST',
                         headers: {
-                            'Content-Type': 'application/x-www-form-urlencoded'  // 設置正確的 Content-Type
+                            'Content-Type': 'application/x-www-form-urlencoded'
                         },
-                        body: formData.toString()  // 將 URLSearchParams 轉換為字串
+                        body: formData.toString() // 將 URLSearchParams 轉換為字串
                     })
                     .then(response => response.json())
                     .then(data => {

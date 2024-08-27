@@ -63,56 +63,56 @@ observer.observe(replace, config);
 function blockRelace_userInfo(){
     // 使用 fetch API 获取 HTML 内容
     fetch(url_userInfoHTML)
-      .then(response => {
+    .then(response => {
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
         return response.text();
-      })
-      .then(html => {
-        // 将获取到的 HTML 插入到页面中的某个元素
+    })
+    .then(html => {
+        // 將獲取到的 HTML 插入到頁面的元素中
         document.getElementById('replace').innerHTML = html;
 
         // 改變 nav 按鈕的背景顏色
         navButton_changeBackgroundColor(0);
-      })
-      .catch(error => {
+    })
+    .catch(error => {
         console.error('There has been a problem with your fetch operation:', error);
-      });
+    });
 }
 
 function blockRelace_dietDiary(){
     // 使用 fetch API 获取 HTML 内容
     fetch(url_dietDiaryHTML)
-      .then(response => {
+    .then(response => {
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
         return response.text();
-      })
-      .then(html => {
-        // 将获取到的 HTML 插入到页面中的某个元素
+    })
+    .then(html => {
+        // 將獲取到的 HTML 插入到頁面的元素中
         document.getElementById('replace').innerHTML = html;
 
         // 改變 nav 按鈕的背景顏色
         navButton_changeBackgroundColor(1);
-      })
-      .catch(error => {
+    })
+    .catch(error => {
         console.error('There has been a problem with your fetch operation:', error);
-      });
+    });
 }
 
 function blockRelace_myFood(threemeals){
     // 使用 fetch API 获取 HTML 内容
     fetch(url_myFoodHTML)
-      .then(response => {
+    .then(response => {
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
         return response.text();
-      })
-      .then(html => {
-        // 将获取到的 HTML 插入到页面中的某个元素
+    })
+    .then(html => {
+        // 將獲取到的 HTML 插入到頁面的元素中
         document.getElementById('replace').innerHTML = html;
 
         // 設置點擊的三餐
@@ -120,31 +120,31 @@ function blockRelace_myFood(threemeals){
 
         // 改變 nav 按鈕的背景顏色
         navButton_changeBackgroundColor(2);
-      })
-      .catch(error => {
+    })
+    .catch(error => {
         console.error('There has been a problem with your fetch operation:', error);
-      });
+    });
 }
 
 function blockRelace_myChart(){
     // 使用 fetch API 获取 HTML 内容
     fetch(url_myChartHTML)
-      .then(response => {
+    .then(response => {
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
         return response.text();
-      })
-      .then(html => {
-        // 将获取到的 HTML 插入到页面中的某个元素
+    })
+    .then(html => {
+        // 將獲取到的 HTML 插入到頁面的元素中
         document.getElementById('replace').innerHTML = html;
 
         // 改變 nav 按鈕的背景顏色
         navButton_changeBackgroundColor(3);
-      })
-      .catch(error => {
+    })
+    .catch(error => {
         console.error('There has been a problem with your fetch operation:', error);
-      });
+    });
 }
 
 function navButton_changeBackgroundColor(option){
@@ -172,7 +172,7 @@ function navButton_changeBackgroundColor(option){
 }
 
 function getUserInfoNickName(url){
-    // 使用 AJAX 请求發送/獲取 JSON 数据
+    // 使用 fetch API 请求發送/獲取 JSON 数据
     fetch(url)
     .then(response => response.json())
     .then(data => {

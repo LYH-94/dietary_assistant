@@ -4,11 +4,9 @@ var myChartNamespace = myChartNamespace || {};
 let vue_myChart;
 
 myChartNamespace.init = function(url_myChart) {
-    // 使用 AJAX 请求發送/獲取 JSON 数据
     fetch(url_myChart)
     .then(response => response.json())
     .then(data => {
-        //console.log(data);
         myChartNamespace.createMyApp(data);
         vue_myChart.mount('#myChart_vue_myChart');
 
@@ -37,10 +35,10 @@ myChartNamespace.init_addBodyData = function(){
         myChartNamespace.count = true;
     }else{
         $('#datepicker_BodyData').datepicker({
-            language: 'zh-TW',  // 設置語言為繁體中文
-            format: 'yyyy/mm/dd',  // 設置日期格式
-            autoclose: true,  // 選擇日期後自動關閉日曆
-            todayHighlight: true,  // 突出顯示今天的日期
+            language: 'zh-TW', // 設置語言為繁體中文
+            format: 'yyyy/mm/dd', // 設置日期格式
+            autoclose: true, // 選擇日期後自動關閉日曆
+            todayHighlight: true, // 突出顯示今天的日期
             calendarWeeks: true, // 在周行左側顯示週數
             todayBtn: 'linked', // 切換到今天
         }).datepicker('setDate', new Date());
@@ -50,10 +48,10 @@ myChartNamespace.init_addBodyData = function(){
 myChartNamespace.init_datepicker_addBodyData = function(){
     // 初始化日期選擇器
     $('#datepicker_BodyData').datepicker({
-        language: 'zh-TW',  // 設置語言為繁體中文
-        format: 'yyyy/mm/dd',  // 設置日期格式
-        autoclose: true,  // 選擇日期後自動關閉日曆
-        todayHighlight: true,  // 突出顯示今天的日期
+        language: 'zh-TW', // 設置語言為繁體中文
+        format: 'yyyy/mm/dd', // 設置日期格式
+        autoclose: true, // 選擇日期後自動關閉日曆
+        todayHighlight: true, // 突出顯示今天的日期
         calendarWeeks: true, // 在周行左側顯示週數
         todayBtn: 'linked', // 切換到今天
     })
@@ -103,9 +101,9 @@ myChartNamespace.addBodyData = function() {
     fetch(url_myChart, {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/x-www-form-urlencoded'  // 設置正確的 Content-Type
+            'Content-Type': 'application/x-www-form-urlencoded'
         },
-        body: formData.toString()  // 將 URLSearchParams 轉換為字串
+        body: formData.toString() // 將 URLSearchParams 轉換為字串
     })
     .then(response => response.json())
     .then(data => {
@@ -163,8 +161,8 @@ myChartNamespace.createMyApp = function(data) {
                     let date = new Date(data[i].date);
 
                     let year = date.getFullYear();
-                    let month = String(date.getMonth() + 1).padStart(2, '0');  // 月份從 0 開始，所以需要 +1
-                    let day = String(date.getDate()).padStart(2, '0');  // 確保日期為兩位數
+                    let month = String(date.getMonth() + 1).padStart(2, '0'); // 月份從 0 開始，所以需要 +1
+                    let day = String(date.getDate()).padStart(2, '0'); // 確保日期為兩位數
                     let formattedDate = `${year}-${month}-${day}`;
 
                     object = {
@@ -207,7 +205,6 @@ myChartNamespace.createMyApp = function(data) {
                 for(let i = 0; i < data.length; ++i){
                     array.unshift(data[i].date.slice(5));
                 }
-                console.log(array);
                 return array;
             }
 
@@ -248,19 +245,16 @@ myChartNamespace.createMyApp = function(data) {
 
             function changeDatas(items) {
     		    if(items === "體重"){
-    		        console.log(items);
     		        data_item = items;
 
     		        chart.data.datasets[0].label = "體重"; // 新標籤
     		        chart.data.datasets[0].data = datas_array_weight(dateFiltered_data.value);
     		    }else if(items === "體脂肪率"){
-    		        console.log(items);
     		        data_item = items;
 
     		        chart.data.datasets[0].label = "體脂肪率"; // 新標籤
     		        chart.data.datasets[0].data = datas_array_bodyfat(dateFiltered_data.value);
     		    }else if(items === "骨筋骼率"){
-    		        console.log(items);
     		        data_item = items;
 
     		        chart.data.datasets[0].label = "骨筋骼率"; // 新標籤
@@ -290,9 +284,9 @@ myChartNamespace.createMyApp = function(data) {
                 fetch(url_myChart, {
                     method: 'POST',
                     headers: {
-                        'Content-Type': 'application/x-www-form-urlencoded'  // 設置正確的 Content-Type
+                        'Content-Type': 'application/x-www-form-urlencoded' // 設置正確的 Content-Type
                     },
-                    body: formData.toString()  // 將 URLSearchParams 轉換為字串
+                    body: formData.toString() // 將 URLSearchParams 轉換為字串
                 })
                 .then(response => response.json())
                 .then(data => {
@@ -309,9 +303,9 @@ myChartNamespace.createMyApp = function(data) {
                 fetch(url_myChart_id, {
                     method: 'POST',
                     headers: {
-                        'Content-Type': 'application/x-www-form-urlencoded'  // 設置正確的 Content-Type
+                        'Content-Type': 'application/x-www-form-urlencoded'
                     },
-                    body: formData.toString()  // 將 URLSearchParams 轉換為字串
+                    body: formData.toString() // 將 URLSearchParams 轉換為字串
                 })
                 .then(response => response.json())
                 .then(data => {

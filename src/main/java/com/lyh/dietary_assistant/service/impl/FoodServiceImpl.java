@@ -145,8 +145,8 @@ public class FoodServiceImpl implements FoodService {
     @Override
     public List<Food> searchFoodFromEdamam(String foodName) throws JsonProcessingException {
         // 設置 URL
-        String app_id = "bfb5c7ca";
-        String app_key = "9a24b52da44f93fce2809fc2ea97a850";
+        String app_id = "xxxxxxxxxxxxxxx";
+        String app_key = "xxxxxxxxxxxxxxx";
         // ingr='{foodName}' - 對於兩個英文單詞組成的食品名稱，用引號表示為一個完整的食品，例如 White Rice => 'White Rice'。
         String url = "https://api.edamam.com/api/food-database/v2/parser?app_id={app_id}&app_key={app_key}&ingr='{foodName}'&nutrition-type=logging";
 
