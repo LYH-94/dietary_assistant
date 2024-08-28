@@ -75,7 +75,7 @@ CREATE TABLE IF NOT EXISTS `t_diet_diary`(
 	`threeMeals` CHAR(6) NOT NULL DEFAULT '早餐',
 	PRIMARY KEY(`id`),
 	CONSTRAINT `FK_diet_diary_user` FOREIGN KEY (`owner`) REFERENCES `t_user` (`id`),
-	CONSTRAINT `FK_diet_diary_food` FOREIGN KEY (`food`) REFERENCES `t_food` (`id`)
+	CONSTRAINT `FK_diet_diary_food` FOREIGN KEY (`food`) REFERENCES `t_food` (`id`) ON DELETE CASCADE ON UPDATE RESTRICT
 ) ENGINE=INNODB DEFAULT CHARSET=utf8mb4;
 
 /* 新增 t_diet_diary 數據表的數據。 */
@@ -103,3 +103,8 @@ INSERT INTO `t_body_composition_data`(`id`,`owner`,`date`,`weight`,`bodyFat`,`sk
 (0,1,'2024-07-25',76,26,35.5),
 (0,2,'2024-07-27',55.3,28.1,31.5),
 (0,2,'2024-07-26',56,28.7,30.5);
+
+
+
+
+

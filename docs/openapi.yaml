@@ -43,7 +43,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/UserInfo_nickName'
+                $ref: '#/components/schemas/UserInfoNickName'
         '401':
           description: 身分驗證失敗返回用戶登入頁
           content:
@@ -70,6 +70,7 @@ paths:
   /login:
     post:
       summary: 登入用戶
+      security: []    # 無需身份驗證
       tags:
         - User
       requestBody:
@@ -285,32 +286,12 @@ paths:
                 type: string
         '404':
           description: 找不到該資源
-  /dietDiary:
+  /dietDiary/{date}:
     get:
-      summary: 查詢飲食日記頁需要的數據(查詢當天及前後三天的飲食紀錄)
+      summary: 查詢查詢指定日期的飲食日記頁需要的數據
       description: 
         訪問飲食日記頁後，還需要相關的數據，因此在發送 /page/dietDiary.html 請求後，
         接著發送 /dietDiary 請求。
-      tags:
-        - DietDiary
-      responses:
-        '200':
-          description: 查詢飲食日記頁所需數據成功
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/DietDiary'
-        '401':
-          description: 身分驗證失敗返回用戶登入頁
-          content:
-            text/html:
-              schema:
-                type: string
-  /dietDiary/{date}:
-    get:
-      summary: 查詢飲食日記頁需要的數據(查詢指定日期及前後三天的飲食紀錄)
       parameters:
         - in: path
           name: date
@@ -338,7 +319,7 @@ paths:
                 type: string
   /dietDiary/{id}/{date}:
     delete:
-      summary: 刪除指定 id 的飲食紀錄並返回指定日期及前後三天的飲食紀錄(刪除紀錄後的紀錄)
+      summary: 刪除指定 id 的飲食紀錄並返回指定日期的飲食紀錄(刪除紀錄後的紀錄)
       parameters:
         - in: path
           name: id
@@ -357,7 +338,7 @@ paths:
         - DietDiary
       responses:
         '200':
-          description: 成功刪除指定紀錄並返回指定日期及前後三天的飲食紀錄(刪除紀錄後的紀錄)
+          description: 成功刪除指定紀錄並返回指定日期的飲食紀錄(刪除紀錄後的紀錄)
           content:
             application/json:
               schema:
@@ -441,28 +422,19 @@ paths:
             text/html:
               schema:
                 type: string
-  /myFood/{date}:
     post:
       summary: 新增食品至飲食日記並返回飲食日記頁。
         若用戶的食品列表中沒有該食品紀錄，則先添加至用戶的食品列表中。
       description: 
         返回飲食日記頁後，還需要相關的數據，因此需要接著發送 /dietDiary 請求來獲取新的飲食紀錄。
-      parameters:
-        - in: path
-          name: date
-          schema:
-            type: string
-            format: date
-          required: true
-          description: 指定日期
       tags:
         - MyFood
       requestBody:
         required: true
         content:
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/Food'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DietDiary'
       responses:
         '200':
           description: 新增食品至飲食日記並返回飲食日記頁成功。
@@ -481,7 +453,7 @@ paths:
           description: 找不到該資源
   /myFood/{id}:
     delete:
-      summary: 刪除指定的食品並返回刪除後的所有食品
+      summary: 刪除指定的食品並返回刪除完成後的所有食品
       parameters:
         - in: path
           name: id
@@ -493,7 +465,7 @@ paths:
         - MyFood
       responses:
         '200':
-          description: 刪除指定食成功品並返回刪除後的所有食品
+          description: 刪除指定食成功品並返回刪除後該用戶的的所有食品
           content:
             application/json:
               schema:
@@ -506,9 +478,9 @@ paths:
             text/html:
               schema:
                 type: string
-  /myFood/{foodName}:
+  /Edamam/{foodName}:
     get:
-      summary: 查詢與 foodName 相關的食品
+      summary: 從第三方資料庫(Edamam API)中查詢與 foodName 相關的食品
       parameters:
         - in: path
           name: foodName
@@ -688,7 +660,7 @@ components:
           type: integer
         proteinRatio:
           type: integer
-    UserInfo_nickName:
+    UserInfoNickName:
       type: object
       properties:
         nickName:
@@ -723,13 +695,13 @@ components:
         foodName:
           type: string
         calories:
-          type: integer
+          type: number
         carbohydrate:
-          type: integer
+          type: number
         fat:
-          type: integer
+          type: number
         protein:
-          type: integer
+          type: number
         portionSize:
           type: integer
     BodyCompositionData:
@@ -743,11 +715,11 @@ components:
           type: string
           format: date
         weight:
-          type: integer
+          type: number
         bodyFat:
-          type: integer
+          type: number
         skeletalMuscleMass:
-          type: integer
+          type: number
   securitySchemes:
     CookieAuth:
       type: apiKey

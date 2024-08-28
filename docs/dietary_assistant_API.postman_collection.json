@@ -1,0 +1,790 @@
+{
+	"info": {
+		"_postman_id": "da87223d-fbb3-4925-8c80-9b97ae2262f0",
+		"name": "dietary_assistant_API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36815007"
+	},
+	"item": [
+		{
+			"name": "Index",
+			"item": [
+				{
+					"name": "/",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "index.html",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/page/index.html",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"page",
+								"index.html"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "index",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/index",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"index"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "login.html",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/page/login.html",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"page",
+								"login.html"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "account",
+									"value": "user001",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "pwd001",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/logout",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "signup.html",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/page/signup.html",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"page",
+								"signup.html"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "account",
+									"value": "ptm_user_003",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "ptm_pwd_003",
+									"type": "text"
+								},
+								{
+									"key": "nickName",
+									"value": "ptm_nickName_C",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "ptm_nickName_C_abc@gmail.com",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/signup",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "userInfo.html",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/page/userInfo.html",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"page",
+								"userInfo.html"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "userInfo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/userInfo",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"userInfo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "userInfo_put",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "_method",
+									"value": "put",
+									"type": "text"
+								},
+								{
+									"key": "account",
+									"value": "user001",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "pwd001",
+									"type": "text"
+								},
+								{
+									"key": "nickName",
+									"value": "nickName_A",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "nickName_A_abc@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "targetCalories",
+									"value": "123",
+									"type": "text"
+								},
+								{
+									"key": "carbohydrateRatio",
+									"value": "50",
+									"type": "text"
+								},
+								{
+									"key": "fatRatio",
+									"value": "25",
+									"type": "text"
+								},
+								{
+									"key": "proteinRatio",
+									"value": "25",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/userInfo",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"userInfo"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "DietDiary",
+			"item": [
+				{
+					"name": "dietDiary.html",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/page/dietDiary.html",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"page",
+								"dietDiary.html"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "dietDiary",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/dietDiary/:date",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"dietDiary",
+								":date"
+							],
+							"variable": [
+								{
+									"key": "date",
+									"value": "2024-08-16"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "dietDiary_delete",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "_method",
+									"value": "delete",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/dietDiary/:id/:date",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"dietDiary",
+								":id",
+								":date"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "4"
+								},
+								{
+									"key": "date",
+									"value": "2024-07-27"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "MyFood",
+			"item": [
+				{
+					"name": "myFood.html",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/page/myFood.html",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"page",
+								"myFood.html"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "myFood",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/myFood",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"myFood"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "myFood_put",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "_method",
+									"value": "put",
+									"type": "text"
+								},
+								{
+									"key": "id",
+									"value": "10",
+									"type": "text"
+								},
+								{
+									"key": "owner",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "foodName",
+									"value": "banana999",
+									"type": "text"
+								},
+								{
+									"key": "calories",
+									"value": "88.7",
+									"type": "text"
+								},
+								{
+									"key": "carbohydrate",
+									"value": "23.0",
+									"type": "text"
+								},
+								{
+									"key": "fat",
+									"value": "0.3",
+									"type": "text"
+								},
+								{
+									"key": "protein",
+									"value": "1.1",
+									"type": "text"
+								},
+								{
+									"key": "portionSize",
+									"value": "100",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/myFood",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"myFood"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "myFood",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 0,\r\n  \"owner\": 0,\r\n  \"date\": \"2024-08-19\",\r\n  \"food\": {\r\n    \"id\": 0,\r\n    \"owner\": 0,\r\n    \"foodName\": \"Milk4\",\r\n    \"calories\": 88,\r\n    \"carbohydrate\": 23.0,\r\n    \"fat\": 0.3,\r\n    \"protein\": 1,\r\n    \"portionSize\": 100\r\n  },\r\n  \"portionSize\": 1,\r\n  \"threeMeals\": \"午餐\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/myFood",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"myFood"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "myFood_delete",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "_method",
+									"value": "delete",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/myFood/:id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"myFood",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edamam",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/Edamam/:foodName",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"Edamam",
+								":foodName"
+							],
+							"variable": [
+								{
+									"key": "foodName",
+									"value": "White Rice"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "MyChart",
+			"item": [
+				{
+					"name": "myChart.html",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/page/myChart.html",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"page",
+								"myChart.html"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "myChart",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/myChart",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"myChart"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "myChart",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "id",
+									"value": "0",
+									"type": "text"
+								},
+								{
+									"key": "owner",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "date",
+									"value": "2024-07-29",
+									"type": "text"
+								},
+								{
+									"key": "weight",
+									"value": "75",
+									"type": "text"
+								},
+								{
+									"key": "bodyFat",
+									"value": "25",
+									"type": "text"
+								},
+								{
+									"key": "skeletalMuscleMass",
+									"value": "36.3",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/myChart",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"myChart"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "myChart_put",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "_method",
+									"value": "put",
+									"type": "text"
+								},
+								{
+									"key": "id",
+									"value": "0",
+									"type": "text"
+								},
+								{
+									"key": "owner",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "date",
+									"value": "2024-07-29",
+									"type": "text"
+								},
+								{
+									"key": "weight",
+									"value": "77",
+									"type": "text"
+								},
+								{
+									"key": "bodyFat",
+									"value": "25",
+									"type": "text"
+								},
+								{
+									"key": "skeletalMuscleMass",
+									"value": "36.3",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/myChart",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"myChart"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "myChart_delete",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "_method",
+									"value": "delete",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/myChart/:id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"myChart",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "8"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "http://localhost:8080/dietary_assistant",
+			"type": "string"
+		}
+	]
+}
