@@ -268,7 +268,7 @@ paths:
       summary: 訪問用戶的飲食日記頁
       description: 
         訪問飲食日記頁後，還需要相關的數據，因此在發送 /page/dietDiary.html 請求後，
-        接著發送 /dietDiary 請求。
+        接著發送 /dietDiary/{date} 請求。
       tags:
         - DietDiary
       responses:
@@ -291,7 +291,7 @@ paths:
       summary: 查詢查詢指定日期的飲食日記頁需要的數據
       description: 
         訪問飲食日記頁後，還需要相關的數據，因此在發送 /page/dietDiary.html 請求後，
-        接著發送 /dietDiary 請求。
+        接著發送 /dietDiary/{date} 請求。
       parameters:
         - in: path
           name: date
