@@ -4,6 +4,8 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.lyh.dietary_assistant.pojo.Food;
 
 import javax.servlet.http.HttpServletRequest;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.text.ParseException;
 import java.util.List;
 import java.util.Map;
@@ -25,5 +27,5 @@ public interface FoodService {
     //public List<Food> searchMyFood(HttpServletRequest req, String foodName);
 
     // 從第三方資料庫(Edamam API)中查詢與 foodName 相關的食品
-    public List<Food> searchFoodFromEdamam(String foodName) throws JsonProcessingException;
+    public List<Food> searchFoodFromEdamam(String foodName) throws IOException;
 }

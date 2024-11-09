@@ -17,11 +17,12 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.client.RestTemplate;
 
 import javax.servlet.http.HttpServletRequest;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
 import java.text.ParseException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import static java.lang.Float.parseFloat;
 import static java.lang.Integer.parseInt;
@@ -143,11 +144,16 @@ public class FoodServiceImpl implements FoodService {
     */
 
     @Override
-    public List<Food> searchFoodFromEdamam(String foodName) throws JsonProcessingException {
-        // 設置 URL
-        String app_id = "xxxxxxxxxxxxxxx";
-        String app_key = "xxxxxxxxxxxxxxx";
-        // ingr='{foodName}' - 對於兩個英文單詞組成的食品名稱，用引號表示為一個完整的食品，例如 White Rice => 'White Rice'。
+    public List<Food> searchFoodFromEdamam(String foodName) throws IOException {
+        // 獲取 Edamam API 的金鑰，用來設置 URL
+        InputStream fis = FoodServiceImpl.class.getClassLoader().getResourceAsStream("Edamam_API.properties");
+
+        Properties pros = new Properties();
+        pros.load(fis);
+        String app_id = pros.getProperty("Edamam.id");
+        String app_key = pros.getProperty("Edamam.key");
+
+        // 參數 ingr='{foodName}' - 對於兩個英文單詞組成的食品名稱，用引號表示為一個完整的食品，例如 White Rice => 'White Rice'。
         String url = "https://api.edamam.com/api/food-database/v2/parser?app_id={app_id}&app_key={app_key}&ingr='{foodName}'&nutrition-type=logging";
 
         // 創建參數映射

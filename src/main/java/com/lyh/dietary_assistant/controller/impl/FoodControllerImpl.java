@@ -12,6 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
@@ -67,7 +68,7 @@ public class FoodControllerImpl implements FoodController {
     @Override
     @RequestMapping(value = "/Edamam/{foodName}", method = RequestMethod.GET)
     @ResponseBody
-    public List<Food> searchFoodFromEdamam(@PathVariable(value = "foodName") String foodName) throws JsonProcessingException {
+    public List<Food> searchFoodFromEdamam(@PathVariable(value = "foodName") String foodName) throws IOException {
         return foodService.searchFoodFromEdamam(foodName);
     }
 }

@@ -5,6 +5,7 @@ import com.lyh.dietary_assistant.pojo.Food;
 import org.springframework.http.ResponseEntity;
 
 import javax.servlet.http.HttpServletRequest;
+import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
@@ -25,5 +26,5 @@ public interface FoodController {
     //public List<Food> searchMyFood(HttpServletRequest req, String foodName);
 
     // 從第三方資料庫(Edamam API)中查詢與 foodName 相關的食品
-    public List<Food> searchFoodFromEdamam(String foodName) throws JsonProcessingException;
+    public List<Food> searchFoodFromEdamam(String foodName) throws IOException;
 }
