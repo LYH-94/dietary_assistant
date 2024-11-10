@@ -25,6 +25,11 @@ GitHub：[dietary_assistant](https://github.com/LYH-94/dietary_assistant)
 
 UI 設計：[Dietary assistant](https://www.figma.com/design/4CqveKgOGsFqqdwKX4nwHa/Dietary-assistant?node-id=0-1&node-type=canvas)
 
+Demo - http://linyaohua.ddns.net:8080/dietary_assistant/
+
+測試帳號
+* 一般用戶 - 帳：user001 密：pwd001
+
 # 頁面與功能
 
 - 用戶登入頁
