@@ -21,6 +21,15 @@
 
 飲食助理 ( Dietary assistant ) 是一個幫助使用者記錄飲食、控制熱量的工具網站，它可以讓使用者記錄一天當中吃過的所有食物，並自動計算這些食物的熱量和三大基本營養素，而使用者可以設置一天中要攝取的熱量目標和三大基本營養素的比例，藉此達成控制飲食的目的。該網站使用了第三方資料庫 ( Edamam API )，讓使用者可以搜尋各種食物，即可獲取該食物的三大基本營養素，此外使用者也可以自行輸入自己所食用的食物。也提供使用者記錄體重、體脂肪率等數據的功能，並將其以圖形化的方式呈現，讓使用者可以清楚的看到數據的變化。
 
+該專案的主要目的在於練習以下技術：
+
+- SSM 框架組合 ( Spring、Spring MVC、MyBatis )
+- Maven 軟體專案管理和自動化構建工具
+- 數據庫串接與設計 ( SQL )
+- 前後端分離開發 ( 用 Vue 進行前端數據渲染 )
+- RESTful API 設計
+- 第三方 API 串接
+
 GitHub：[dietary_assistant](https://github.com/LYH-94/dietary_assistant)
 
 UI 設計：[Dietary assistant](https://www.figma.com/design/4CqveKgOGsFqqdwKX4nwHa/Dietary-assistant?node-id=0-1&node-type=canvas)
