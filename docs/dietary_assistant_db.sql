@@ -2,7 +2,7 @@ CREATE DATABASE 'dietary_assistant_db' CHARACTER SET 'utf8mb4';
 
 USE dietary_assistant_db;
 
-/* 根據 E-R 模型創建各實體的數據表。 */
+/* 根據 E-R 模型創建各實體的資料表。 */
 
 /* 用戶 - t_user */
 CREATE TABLE IF NOT EXISTS `t_user`(
@@ -12,7 +12,7 @@ CREATE TABLE IF NOT EXISTS `t_user`(
 	PRIMARY KEY(`id`)
 ) ENGINE=INNODB DEFAULT CHARSET=utf8mb4;
 
-/* 新增 t_user 數據表的數據。 */
+/* 新增 t_user 資料表的資料。 */
 INSERT INTO `t_user`(`id`,`account`,`password`) VALUES
 (0,'user001','pwd001'),
 (0,'user002','pwd002'),
@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS `t_user_info`(
 	CONSTRAINT `FK_user_info_user` FOREIGN KEY (`owner`) REFERENCES `t_user` (`id`)
 ) ENGINE=INNODB DEFAULT CHARSET=utf8mb4;
 
-/* 新增 t_user_info 數據表的數據。 */
+/* 新增 t_user_info 資料表的資料。 */
 INSERT INTO `t_user_info`(`id`,`owner`,`nickName`,`email`,`targetCalories`,`carbohydrateRatio`,`fatRatio`,`proteinRatio`) VALUES
 (0,1,'nickName_A','nickName_A_abc@gmail.com',1750,50,25,25),
 (0,2,'nickName_B','nickName_B_abc@gmail.com',1800,50,20,30),
@@ -56,7 +56,7 @@ CREATE TABLE IF NOT EXISTS `t_food`(
 	CONSTRAINT `FK_food_user` FOREIGN KEY (`owner`) REFERENCES `t_user` (`id`)
 ) ENGINE=INNODB DEFAULT CHARSET=utf8mb4;
 
-/* 新增 t_food 數據表的數據。 */
+/* 新增 t_food 資料表的資料。 */
 INSERT INTO `t_food`(`id`,`owner`,`foodName`,`calories`,`carbohydrate`,`fat`,`protein`,`portionSize`) VALUES
 (0,1,'appale',52,14,0.2,0.3,100),
 (0,1,'banana',88.7,23,0.3,1.1,100),
@@ -78,13 +78,13 @@ CREATE TABLE IF NOT EXISTS `t_diet_diary`(
 	CONSTRAINT `FK_diet_diary_food` FOREIGN KEY (`food`) REFERENCES `t_food` (`id`) ON DELETE CASCADE ON UPDATE RESTRICT
 ) ENGINE=INNODB DEFAULT CHARSET=utf8mb4;
 
-/* 新增 t_diet_diary 數據表的數據。 */
+/* 新增 t_diet_diary 資料表的資料。 */
 INSERT INTO `t_diet_diary`(`id`,`owner`,`date`,`food`,`portionSize`,`threeMeals`) VALUES
 (0,1,NOW(),3,1,'早餐'),
 (0,1,NOW(),4,1,'午餐'),
 (0,1,NOW(),1,1,'晚餐');
 
-/* 體態數據 - t_body_composition_data */
+/* 體態資料 - t_body_composition_data */
 CREATE TABLE IF NOT EXISTS `t_body_composition_data`(
 	`id` INT NOT NULL AUTO_INCREMENT,
 	`owner` INT NOT NULL,
@@ -96,15 +96,10 @@ CREATE TABLE IF NOT EXISTS `t_body_composition_data`(
 	CONSTRAINT `FK_body_composition_data_user` FOREIGN KEY (`owner`) REFERENCES `t_user` (`id`)
 ) ENGINE=INNODB DEFAULT CHARSET=utf8mb4;
 
-/* 新增 t_body_composition_data 數據表的數據。 */
+/* 新增 t_body_composition_data 資料表的資料。 */
 INSERT INTO `t_body_composition_data`(`id`,`owner`,`date`,`weight`,`bodyFat`,`skeletalMuscleMass`) VALUES
 (0,1,'2024-07-27',75.3,25.3,36),
 (0,1,'2024-07-26',75.8,25.8,35.8),
 (0,1,'2024-07-25',76,26,35.5),
 (0,2,'2024-07-27',55.3,28.1,31.5),
 (0,2,'2024-07-26',56,28.7,30.5);
-
-
-
-
-

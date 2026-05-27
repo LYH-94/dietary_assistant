@@ -9,7 +9,7 @@
 
 [系統設計](#系統設計)
 
-[數據庫設計](#數據庫設計)
+[資料庫設計](#資料庫設計)
 
 [Web API 設計](#web-api-設計)
 
@@ -21,22 +21,22 @@
 
 飲食助理 ( Dietary assistant ) 是一個協助使用者記錄飲食、追蹤熱量與控制飲食習慣的工具網站，使用者可以記錄每日所攝取的食物，系統會自動計算其總熱量與三大營養素，並允許使用者設定每日熱量目標及營養素比例，以達到控制飲食的效果。
 
-系統整合了第三方資料庫 Edamam API，讓使用者能快速搜尋各種食物並獲取其營養資訊，同時也支援手動輸入自訂食物。除了飲食記錄外，系統還提供體重、體脂肪率等數據的追蹤功能，並透過圖表視覺化呈現，協助使用者清楚掌握自身的變化趨勢。
+系統整合了第三方資料庫 Edamam API，讓使用者能快速搜尋各種食物並獲取其營養資訊，同時也支援手動輸入自訂食物。除了飲食記錄外，系統還提供體重、體脂肪率等資料的追蹤功能，並透過圖表視覺化呈現，協助使用者清楚掌握自身的變化趨勢。
 
 主要使用以下技術：
 
 - Spring：透過 IoC/DI 管理專案中的 Service、DAO 等元件，降低模組耦合度，提升系統的可維護性。
 - Spring MVC：開發 RESTful API 處理用戶登入、註冊與頁面導向等功能請求。
 - MyBatis：透過 Mapper 介面簡化 MySQL 的 CRUD 操作。
-- MySQL：用於保存系統業務數據，並根據 ER 模型圖創建數據表，確保結構清晰，方便維護與查詢。
-- Vue：作為前端框架，用於接收後端傳遞的系統數據並進行動態頁面渲染，將結果呈現給使用者，實現前後端分離的開發模式。
-- 第三方API整合：串接 Edamam API 提供食品搜尋與營養成分查詢功能。
+- MySQL：用於保存系統業務資料，並根據 ER 模型圖創建資料表，確保結構清晰，方便維護與查詢。
+- Vue：作為前端框架，用於接收後端傳遞的系統資料並進行動態頁面渲染，將結果呈現給使用者，實現前後端分離的開發架構。
+- 第三方 API 整合：串接 Edamam API 提供食品搜尋與營養成分查詢功能。
 
 GitHub：[dietary_assistant](https://github.com/LYH-94/dietary_assistant)
 
 UI 設計：[Dietary assistant](https://www.figma.com/design/4CqveKgOGsFqqdwKX4nwHa/Dietary-assistant?node-id=0-1&node-type=canvas)
 
-Demo - https://kenny-tables-appraisal-tools.trycloudflare.com/dietary_assistant/
+Demo - [Dietary assistant](https://kenny-tables-appraisal-tools.trycloudflare.com/dietary_assistant/)
 
 測試帳號
 * 一般用戶 - 帳：user001 密：pwd001
@@ -133,13 +133,13 @@ Demo - https://kenny-tables-appraisal-tools.trycloudflare.com/dietary_assistant/
     - 點擊 “飲食日記” 訪問 “飲食日記頁”。
     - 點擊 “我的食品” 訪問 “我的食品頁”。
     - 點擊 “圖表” 訪問 “圖表頁”。
-  - 用戶體態數據可視化。
-  - 用戶體態數據列表
-    - 點擊 “添加數據” 按鈕，新增用戶的體態數據。
-    - 點擊 “刪除” 文字，刪除指定數據。
-    - 點擊 “修改” 文字，更新指定數據。
-  - 使用下拉式選單 ( 體重、體脂肪、骨筋骼率 ) 選擇要顯示的數據。
-  - 點擊 “期間” 來選擇要檢視的部分數據。
+  - 用戶體態資料可視化
+  - 用戶體態資料列表
+    - 點擊 “添加資料” 按鈕，新增用戶的體態資料。
+    - 點擊 “刪除” 文字，刪除指定資料。
+    - 點擊 “修改” 文字，更新指定資料。
+  - 使用下拉式選單 ( 體重、體脂肪、骨筋骼率 ) 選擇要顯示的資料。
+  - 點擊 “期間” 來選擇要檢視的部分資料。
 
 <p align="center">
   <img src="./docs/images/myChart(1).png" />
@@ -159,20 +159,20 @@ Demo - https://kenny-tables-appraisal-tools.trycloudflare.com/dietary_assistant/
   <img src="./docs/images/dietary_assistant_系統設計.svg" />
 </p>
 
-# 數據庫設計
+# 資料庫設計
 
-1. 抽取實體 ( 應與數據表對應 ) 並分析其中的屬性 <br>
-   用戶 User、用戶資訊 UserInfo、飲食日記 DietDiary、食品 Food、體態數據 BodyCompositionData
+1. 抽取實體 ( 應與資料表對應 ) 並分析其中的屬性 <br>
+   用戶 User、用戶資訊 UserInfo、飲食日記 DietDiary、食品 Food、體態資料 BodyCompositionData
    - 用戶 User：帳號、密碼
    - 用戶資訊 UserInfo：所屬用戶、暱稱、電子信箱、目標熱量、碳水比例、脂肪比例、蛋白質比例。
    - 飲食日記 DietDiary：所屬用戶、日期、食品、份量、三餐。
    - 食品 Food：所屬用戶、食品名稱、熱量、碳水、脂肪、蛋白質、份量。
-   - 體態數據 BodyCompositionData：所屬用戶、日期、體重、體脂肪率、骨筋骼率。
+   - 體態資料 BodyCompositionData：所屬用戶、日期、體重、體脂肪率、骨筋骼率。
 2. 分析實體之間的關係
    - 用戶 User：用戶資訊 UserInfo ⇒ 1：1
    - 用戶 User：飲食日記 DietDiary ⇒ 1：n
    - 用戶 User：食品 Food ⇒ 1：n
-   - 用戶 User：體態數據 BodyCompositionData ⇒ 1：n
+   - 用戶 User：體態資料 BodyCompositionData ⇒ 1：n
    - 飲食日記 DietDiary：食品 Food ⇒ 1：1
 
 <p align="center">
@@ -222,8 +222,8 @@ Demo - https://kenny-tables-appraisal-tools.trycloudflare.com/dietary_assistant/
       - 可以透過 “搜尋” 功能，從第三方資料庫 ( Edamam API ) 中尋找餐點。⇒ GET - /Edamam/{foodName}
 
   - 圖表頁 myChart.html ⇒ GET - /page/myChart.html ⇒ GET - /myChart
-    - 點擊 “添加數據” 按鈕，新增用戶的體態數據。 ⇒ POST - /myChart
-    - 點擊 “刪除” 圖示，刪除指定數據。 ⇒ DELETE - /myChart/{id}
+    - 點擊 “添加資料” 按鈕，新增用戶的體態資料。 ⇒ POST - /myChart
+    - 點擊 “刪除” 圖示，刪除指定資料。 ⇒ DELETE - /myChart/{id}
 
 # 用到的技術
 
@@ -262,8 +262,8 @@ Demo - https://kenny-tables-appraisal-tools.trycloudflare.com/dietary_assistant/
 - Spring Test ( v5.3.1 )
   - Junit4 ( v4.12 )
 
-### 數據庫
+### 資料庫
 
-- 關係型數據庫 - MySQL ( v8.0.31 )
-- 數據庫連接池 - Druid ( v1.2.14 )
+- 關係型資料庫 - MySQL ( v8.0.31 )
+- 資料庫連接池 - Druid ( v1.2.14 )
 - MySQL 驅動 - mysql-connector-j ( v8.0.31 )

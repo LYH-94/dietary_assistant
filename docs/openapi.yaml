@@ -3,13 +3,13 @@ info:
   title: Dietary assistant API
   version: 1.0.0
 servers:
-  - url: http://localhost:8080
+  - url: http://localhost:8080/dietary_assistant/
 paths:
   /page/index.html:
     get:
       summary: 訪問 index 頁面
       description: 
-        訪問 index 頁面後，還需要相關的數據，因此在發送 /page/index.html 請求後，
+        訪問 index 頁面後，還需要相關的資料，因此在發送 /page/index.html 請求後，
         接著發送 /index 請求。
       tags:
         - Index
@@ -30,9 +30,9 @@ paths:
           description: 找不到該資源
   /index:
     get:
-      summary: 查詢 index 頁面需要的數據
+      summary: 查詢 index 頁面需要的資料
       description: 
-        訪問 index 頁面後，還需要相關的數據，因此在發送 /page/index.html 請求後，
+        訪問 index 頁面後，還需要相關的資料，因此在發送 /page/index.html 請求後，
         接著發送 /index 請求。
         而預設為顯示用戶的飲食日記，因此接著訪問 /page/dietDiary.html 請求。
       tags:
@@ -183,7 +183,7 @@ paths:
     get:
       summary: 訪問用戶資訊頁
       description: 
-        訪問用戶資訊頁後，還需要相關的數據，因此在發送 /page/userInfo.html 請求後，
+        訪問用戶資訊頁後，還需要相關的資料，因此在發送 /page/userInfo.html 請求後，
         接著發送 /userInfo 請求。
       tags:
         - User
@@ -206,7 +206,7 @@ paths:
     get:
       summary: 查詢用戶資訊
       description: 
-        訪問用戶資訊頁後，還需要相關的數據，因此在發送 /page/userInfo.html 請求後，
+        訪問用戶資訊頁後，還需要相關的資料，因此在發送 /page/userInfo.html 請求後，
         接著發送 /userInfo 請求。
       tags:
         - User
@@ -267,7 +267,7 @@ paths:
     get:
       summary: 訪問用戶的飲食日記頁
       description: 
-        訪問飲食日記頁後，還需要相關的數據，因此在發送 /page/dietDiary.html 請求後，
+        訪問飲食日記頁後，還需要相關的資料，因此在發送 /page/dietDiary.html 請求後，
         接著發送 /dietDiary/{date} 請求。
       tags:
         - DietDiary
@@ -288,9 +288,9 @@ paths:
           description: 找不到該資源
   /dietDiary/{date}:
     get:
-      summary: 查詢查詢指定日期的飲食日記頁需要的數據
+      summary: 查詢查詢指定日期的飲食日記頁需要的資料
       description: 
-        訪問飲食日記頁後，還需要相關的數據，因此在發送 /page/dietDiary.html 請求後，
+        訪問飲食日記頁後，還需要相關的資料，因此在發送 /page/dietDiary.html 請求後，
         接著發送 /dietDiary/{date} 請求。
       parameters:
         - in: path
@@ -304,7 +304,7 @@ paths:
         - DietDiary
       responses:
         '200':
-          description: 查詢飲食日記頁所需數據成功
+          description: 查詢飲食日記頁所需資料成功
           content:
             application/json:
               schema:
@@ -355,7 +355,7 @@ paths:
     get:
       summary: 訪問用戶的我的食品頁
       description: 
-        訪問我的食品頁後，還需要相關的數據，因此在發送 /page/myFood.html 請求後，
+        訪問我的食品頁後，還需要相關的資料，因此在發送 /page/myFood.html 請求後，
         接著發送 /myFood 請求。
       tags:
         - MyFood
@@ -376,15 +376,15 @@ paths:
           description: 找不到該資源
   /myFood:
     get:
-      summary: 查詢我的食品頁需要的數據
+      summary: 查詢我的食品頁需要的資料
       description: 
-        訪問我的食品頁後，還需要相關的數據，因此在發送 /page/myFood.html 請求後，
+        訪問我的食品頁後，還需要相關的資料，因此在發送 /page/myFood.html 請求後，
         接著發送 /myFood 請求。
       tags:
         - MyFood
       responses:
         '200':
-          description: 查詢我的食品頁所需數據成功
+          description: 查詢我的食品頁所需資料成功
           content:
             application/json:
               schema:
@@ -426,7 +426,7 @@ paths:
       summary: 新增食品至飲食日記並返回飲食日記頁。
         若用戶的食品列表中沒有該食品紀錄，則先添加至用戶的食品列表中。
       description: 
-        返回飲食日記頁後，還需要相關的數據，因此需要接著發送 /dietDiary 請求來獲取新的飲食紀錄。
+        返回飲食日記頁後，還需要相關的資料，因此需要接著發送 /dietDiary 請求來獲取新的飲食紀錄。
       tags:
         - MyFood
       requestBody:
@@ -509,7 +509,7 @@ paths:
     get:
       summary: 訪問用戶的我的圖表頁
       description: 
-        訪問我的圖表頁後，還需要相關的數據，因此在發送 /page/myChart.html 請求後，
+        訪問我的圖表頁後，還需要相關的資料，因此在發送 /page/myChart.html 請求後，
         接著發送 /myChart 請求。
       tags:
         - MyChart
@@ -530,15 +530,15 @@ paths:
           description: 找不到該資源
   /myChart:
     get:
-      summary: 查詢我的圖表頁需要的數據
+      summary: 查詢我的圖表頁需要的資料
       description: 
-        訪問我的圖表頁後，還需要相關的數據，因此在發送 /page/myChart.html 請求後，
+        訪問我的圖表頁後，還需要相關的資料，因此在發送 /page/myChart.html 請求後，
         接著發送 /myChart 請求。
       tags:
         - MyChart
       responses:
         '200':
-          description: 查詢我的圖表頁所需數據成功
+          description: 查詢我的圖表頁所需資料成功
           content:
             application/json:
               schema:
@@ -552,7 +552,7 @@ paths:
               schema:
                 type: string
     post:
-      summary: 新增用戶體態數據
+      summary: 新增用戶體態資料
       requestBody:
         required: true
         content:
@@ -563,7 +563,7 @@ paths:
         - MyChart
       responses:
         '200':
-          description: 新增用戶體態數據成功返回新增完成後的所有體態數據
+          description: 新增用戶體態資料成功返回新增完成後的所有體態資料
           content:
             application/json:
               schema:
@@ -577,7 +577,7 @@ paths:
               schema:
                 type: string
     put:
-      summary: 更新指定的體態數據並返回更新後的所有數據
+      summary: 更新指定的體態資料並返回更新後的所有資料
       tags:
         - MyChart
       requestBody:
@@ -588,7 +588,7 @@ paths:
               $ref: '#/components/schemas/BodyCompositionData'
       responses:
         '200':
-          description: 更新體態數據成功並返回更新後的所有數據
+          description: 更新體態資料成功並返回更新後的所有資料
           content:
             application/json:
               schema:
@@ -603,19 +603,19 @@ paths:
                 type: string
   /myChart/{id}:
     delete:
-      summary: 刪除指定的體態數據並返回刪除數據後的所有體態數據
+      summary: 刪除指定的體態資料並返回刪除資料後的所有體態資料
       parameters:
         - in: path
           name: id
           schema:
             type: integer
           required: true
-          description: 要刪除的體態數據的 id
+          description: 要刪除的體態資料的 id
       tags:
         - MyChart
       responses:
         '200':
-          description: 刪除指定的體態數據成功並返回刪除數據後的所有體態數據
+          description: 刪除指定的體態資料成功並返回刪除資料後的所有體態資料
           content:
             application/json:
               schema:
