@@ -36,7 +36,7 @@ GitHub：[dietary_assistant](https://github.com/LYH-94/dietary_assistant)
 
 UI 設計：[Dietary assistant](https://www.figma.com/design/4CqveKgOGsFqqdwKX4nwHa/Dietary-assistant?node-id=0-1&node-type=canvas)
 
-Demo - [Dietary assistant](https://kenny-tables-appraisal-tools.trycloudflare.com/dietary_assistant/)
+Demo - [Dietary assistant](https://handhelds-decade-meals-watching.trycloudflare.com/dietary_assistant/)
 
 測試帳號
 * 一般用戶 - 帳：user001 密：pwd001
